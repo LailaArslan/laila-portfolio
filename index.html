@@ -1,678 +1,427 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Laila Arslan — UX/UI Designer</title>
-  <meta name="description" content="UX/UI Designer using AI-assisted workflows to turn complex services into clear digital experiences." />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Laila Arslan — UX/UI Designer</title>
+<meta name="description" content="Laila Arslan — UX/UI Designer with a visual-design and illustration background, turning complex services into clear digital experiences. AI-assisted workflows."/>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<!-- Favicon (inline SVG — the LA monogram) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23241408'/%3E%3Ctext x='32' y='43' font-family='Archivo,Arial,sans-serif' font-size='27' font-weight='800' fill='%23F7F1E1' text-anchor='middle'%3ELA%3C/text%3E%3C/svg%3E"/>
 
-  <link rel="stylesheet" href="styles.css" />
+<!-- Open Graph / social share -->
+<!-- NOTE: og:image should be an ABSOLUTE url for LinkedIn/Twitter to show the preview.
+     After deploying, change the two image lines below to e.g.
+     https://YOURUSERNAME.github.io/REPO/images/og-image.png -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Laila Arslan — UX/UI Designer"/>
+<meta property="og:description" content="UX/UI Designer turning complex services into clear digital experiences, with an AI-assisted workflow."/>
+<meta property="og:image" content="images/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Laila Arslan — UX/UI Designer"/>
+<meta name="twitter:description" content="UX/UI Designer turning complex services into clear digital experiences, with an AI-assisted workflow."/>
+<meta name="twitter:image" content="images/og-image.png"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Archivo:wght@400;600;700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 
-  <!-- ============================================================
-       NAVIGATION
-       ============================================================ -->
-  <header class="nav-wrapper">
-    <nav class="nav container">
-      <a href="#" class="nav-logo">
-        <span class="logo-mark" aria-hidden="true">LA</span>
-        <span class="logo-name">Laila Arslan</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Work</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#ai-workflow">Process</a></li>
-        <li><a href="#contact" class="nav-cta">Contact</a></li>
-      </ul>
-      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </nav>
-    <div class="mobile-menu" aria-hidden="true">
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Work</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#ai-workflow">Process</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+<!-- ============================ NAV ============================ -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="logo" href="#top">
+      <span class="logo-mark">LA</span>
+      <span>Laila Arslan</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#process">Process</a>
+      <a href="#contact" class="nav-cta">Contact</a>
     </div>
-  </header>
+  </div>
+</nav>
 
-  <main>
+<main>
 
-    <!-- ============================================================
-         HERO
-         ============================================================ -->
-    <section id="hero" class="hero">
-
-      <div class="hero-shapes" aria-hidden="true">
-        <!-- Yellow — large anchor, top right -->
-        <div class="hs-circle hs-y"></div>
-        <!-- Pink — large counterweight, bottom left -->
-        <div class="hs-circle hs-p-lg"></div>
-        <!-- Chocolate — small grounding accent, lower right -->
-        <div class="hs-circle hs-c"></div>
-        <!-- Floating star 1 -->
-        <svg class="hs-star hs-star-1" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-          <g stroke="#1A1108" stroke-width="1.8" stroke-linecap="round">
-            <line x1="10" y1="1" x2="10" y2="19"/>
-            <line x1="1" y1="10" x2="19" y2="10"/>
-            <line x1="3.2" y1="3.2" x2="16.8" y2="16.8"/>
-            <line x1="16.8" y1="3.2" x2="3.2" y2="16.8"/>
-          </g>
-        </svg>
-        <!-- Floating star 2 -->
-        <svg class="hs-star hs-star-2" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-          <g stroke="#1A1108" stroke-width="1.8" stroke-linecap="round">
-            <line x1="10" y1="1" x2="10" y2="19"/>
-            <line x1="1" y1="10" x2="19" y2="10"/>
-            <line x1="3.2" y1="3.2" x2="16.8" y2="16.8"/>
-            <line x1="16.8" y1="3.2" x2="3.2" y2="16.8"/>
-          </g>
-        </svg>
-        <!-- Black drawn arc — line vocabulary, bottom left area -->
-        <svg class="hs-arc" viewBox="0 0 260 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M252 130 C252 58,196 8,130 8 C64 8,8 64,8 130 C8 168,20 203,44 228"
-                stroke="#1A1108" stroke-width="3.5" stroke-linecap="round"/>
-        </svg>
-      </div>
-
-      <div class="container hero-content">
-        <!-- Yellow pill badge with star icon -->
-        <div class="hero-badge">
-          <svg class="badge-star" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-            <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-              <line x1="7" y1="1" x2="7" y2="13"/>
-              <line x1="1" y1="7" x2="13" y2="7"/>
-              <line x1="2.9" y1="2.9" x2="11.1" y2="11.1"/>
-              <line x1="11.1" y1="2.9" x2="2.9" y2="11.1"/>
-            </g>
-          </svg>
-          UX/UI Designer &middot; AI-Assisted Workflows
-        </div>
-
-        <h1 class="hero-headline">
-          Turning complex services into clear digital experiences.
+<!-- ============================ HERO ============================ -->
+<header class="hero" id="top">
+  <svg class="doodle float-a" style="left:6%;top:120px" width="30" height="30" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1.5c1.4 11.8 6.7 17.1 18.5 18.5C26.7 21.4 21.4 26.7 20 38.5 18.6 26.7 13.3 21.4 1.5 20 13.3 18.6 18.6 13.3 20 1.5Z" fill="var(--mint-deep)"/></svg>
+  <svg class="doodle float-b" style="left:44%;top:90px" width="26" height="26" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M14 2.5C13.4 8 13 11 13 14s.4 6 1 11.5c.6-5.5 1-8.5 1-11.5s-.4-6-1-11.5Z" fill="var(--orange-deep)"/><path d="M2.5 14C8 13.4 11 13 14 13s6 .4 11.5 1C20 14.6 17 15 14 15s-6-.4-11.5-1Z" fill="var(--orange-deep)"/></svg>
+  <svg class="doodle" style="left:3%;bottom:60px" width="74" height="74" viewBox="0 0 74 74" fill="var(--pink-deep)" aria-hidden="true"><circle cx="9" cy="9" r="4.4"/><circle cx="37" cy="9" r="4.4"/><circle cx="65" cy="9" r="4.4"/><circle cx="9" cy="37" r="4.4"/><circle cx="37" cy="37" r="4.4"/><circle cx="65" cy="37" r="4.4"/><circle cx="9" cy="65" r="4.4"/><circle cx="37" cy="65" r="4.4"/><circle cx="65" cy="65" r="4.4"/></svg>
+  <svg class="doodle float-c" style="right:18%;bottom:80px" width="130" height="16" viewBox="0 0 210 22" fill="none" stroke="var(--ink)" stroke-width="3.4" stroke-linecap="round" aria-hidden="true"><path d="M3 12C16 3 27 3 38 12s22 9 35 0 22-9 35 0 22 9 35 0 22-9 35 0"/></svg>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-main">
+        <span class="badge"><svg width="14" height="14" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1.5c1.4 11.8 6.7 17.1 18.5 18.5C26.7 21.4 21.4 26.7 20 38.5 18.6 26.7 13.3 21.4 1.5 20 13.3 18.6 18.6 13.3 20 1.5Z" fill="var(--ink)"/></svg> UX/UI Designer · AI-assisted workflows</span>
+        <h1 class="h-hero">
+          Turning complex services into
+          <span class="mark mark-pink"><span>clear</span></span>
+          <span class="mark mark-mint"><span>digital</span></span> experiences.
         </h1>
-
-        <!-- Brand signature: hand-drawn wavy underline -->
-        <div class="hero-underline" aria-hidden="true">
-          <svg viewBox="0 0 580 20" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0 13 C72 5,148 20,228 11 C308 2,390 18,468 9 C512 4,548 15,580 11"
-                  stroke="#1A1108" stroke-width="2.8" stroke-linecap="round"/>
-          </svg>
-        </div>
-
-        <p class="hero-sub">
-          I combine user research, prototyping, visual design, and usability testing
-          to create products that are useful, intuitive, and aligned with business goals.
+        <p class="lead" style="max-width:560px;margin-top:30px">
+          I'm a UX/UI designer with a visual-design and illustration background — turning
+          fragmented services into experiences that feel simple, human and purposeful.
         </p>
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">View projects</a>
-          <a href="#contact" class="btn btn-secondary">Contact me</a>
+        <div class="hero-actions">
+          <a class="btn btn-dark" href="#work">View projects <svg width="15" height="15" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1.5c1.4 11.8 6.7 17.1 18.5 18.5C26.7 21.4 21.4 26.7 20 38.5 18.6 26.7 13.3 21.4 1.5 20 13.3 18.6 18.6 13.3 20 1.5Z" fill="var(--yellow)"/></svg></a>
+          <a class="btn btn-outline" href="#contact">Contact me</a>
         </div>
       </div>
-    </section>
-
-    <!-- Wave: cream hero → pink about -->
-    <div class="wave-sep" style="background:#F5EFE0;" aria-hidden="true">
-      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,48 C360,8 1080,72 1440,40 L1440,80 L0,80 Z" fill="#F2B8C0"/>
-      </svg>
+      <div class="hero-photo">
+        <img class="photo-img" src="images/hero-portrait.webp" alt="Portrait of Laila Arslan"/>
+        <svg class="doodle" style="left:-86px;top:92px;transform:scaleX(-1)" width="104" height="78" viewBox="0 0 130 90" fill="none" stroke="var(--ink)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 14C36 6 84 8 112 56"/><path d="M96 44c8 5 14 9 17 13M113 57c-6 2-12 4-19 4"/></svg>
+        <span class="hand-note" style="position:absolute;left:-128px;top:148px;transform:rotate(-9deg)">that's me!</span>
+        <svg class="doodle float-b" style="right:-6px;top:-10px" width="24" height="24" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1.5c1.4 11.8 6.7 17.1 18.5 18.5C26.7 21.4 21.4 26.7 20 38.5 18.6 26.7 13.3 21.4 1.5 20 13.3 18.6 18.6 13.3 20 1.5Z" fill="var(--yellow)"/></svg>
+      </div>
     </div>
+  </div>
+</header>
 
-    <!-- ============================================================
-         ABOUT
-         TO CUSTOMIZE: Update location and availability below.
-         ============================================================ -->
-    <section id="about" class="section bg-pink">
-      <div class="container">
-        <div class="about-grid">
-          <div class="about-label-col">
-            <span class="section-label">About</span>
-          </div>
-          <div class="about-content">
-            <h2 class="section-heading">Designing with clarity, research, and the right tools.</h2>
-            <div class="about-body">
-              <p>
-                I'm a UX/UI Designer with a background in visual design and hands-on experience
-                designing customer-facing digital platforms. My work sits at the intersection of
-                user understanding and product clarity — taking services that are often complex
-                and fragmented, and shaping them into experiences that feel simple and purposeful.
-              </p>
-              <p>
-                I'm interested in how AI can support faster research, smarter prototyping, and
-                more efficient product design workflows — helping teams move from insight to tested
-                solutions without losing the human understanding that makes good UX work.
-              </p>
-            </div>
+<!-- ========================= MARQUEE ========================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">UX Research ✱ Visual Design ✱ AI Workflows ✱ Prototyping ✱ Design Systems ✱ Illustration ✱ Usability Testing ✱ UX Research ✱ Visual Design ✱ AI Workflows ✱ Prototyping ✱ Design Systems ✱ Illustration ✱ Usability Testing ✱ </span>
+    <span class="marquee-item">UX Research ✱ Visual Design ✱ AI Workflows ✱ Prototyping ✱ Design Systems ✱ Illustration ✱ Usability Testing ✱ UX Research ✱ Visual Design ✱ AI Workflows ✱ Prototyping ✱ Design Systems ✱ Illustration ✱ Usability Testing ✱ </span>
+  </div>
+</div>
 
-            <blockquote class="about-callout fade-in">
-              <svg class="callout-star" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <g stroke="#F5E340" stroke-width="1.8" stroke-linecap="round">
-                  <line x1="10" y1="1" x2="10" y2="19"/>
-                  <line x1="1" y1="10" x2="19" y2="10"/>
-                  <line x1="3.2" y1="3.2" x2="16.8" y2="16.8"/>
-                  <line x1="16.8" y1="3.2" x2="3.2" y2="16.8"/>
-                </g>
-              </svg>
-              "AI doesn't replace the thinking. It gives me more time to focus on it."
-            </blockquote>
-
-            <div class="about-facts">
-              <!-- TO CUSTOMIZE: Update location -->
-              <div class="fact">
-                <span class="fact-label">Based in</span>
-                <span class="fact-value">[Your location]</span>
-              </div>
-              <div class="fact">
-                <span class="fact-label">Available for</span>
-                <span class="fact-value">Full-time roles &middot; Freelance</span>
-              </div>
-              <div class="fact">
-                <span class="fact-label">Open to</span>
-                <span class="fact-value">Remote &middot; Hybrid &middot; On-site</span>
-              </div>
-            </div>
-          </div>
+<!-- ========================== ABOUT ========================== -->
+<section class="section about" id="about">
+  <svg class="doodle float-a" style="right:8%;top:120px" width="26" height="26" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1.5c1.4 11.8 6.7 17.1 18.5 18.5C26.7 21.4 21.4 26.7 20 38.5 18.6 26.7 13.3 21.4 1.5 20 13.3 18.6 18.6 13.3 20 1.5Z" fill="var(--ink)"/></svg>
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="reveal">
+        <span class="kicker"><svg width="13" height="13" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1.5c1.4 11.8 6.7 17.1 18.5 18.5C26.7 21.4 21.4 26.7 20 38.5 18.6 26.7 13.3 21.4 1.5 20 13.3 18.6 18.6 13.3 20 1.5Z" fill="var(--ink-soft)"/></svg> About</span>
+        <h2 class="h-sec" style="margin-top:16px;max-width:16ch">
+          Designing with clarity, research &amp; the
+          <span class="mark"><span>right tools</span></span>.
+        </h2>
+        <p class="lead" style="margin-top:26px">
+          I'm a UX/UI Designer with a background in visual design and hands-on experience
+          designing customer-facing digital platforms. My work sits at the intersection of
+          user understanding and product clarity — taking services that are often complex and
+          fragmented, and shaping them into experiences that feel simple and purposeful.
+        </p>
+        <p class="lead" style="margin-top:18px">
+          I'm interested in how AI can support faster research, smarter prototyping, and more
+          efficient design workflows — helping teams move from insight to tested solutions
+          without losing the human understanding that makes good UX work.
+        </p>
+        <div class="callout">
+          <svg style="flex-shrink:0;margin-top:2px" width="20" height="20" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1.5c1.4 11.8 6.7 17.1 18.5 18.5C26.7 21.4 21.4 26.7 20 38.5 18.6 26.7 13.3 21.4 1.5 20 13.3 18.6 18.6 13.3 20 1.5Z" fill="var(--yellow)"/></svg>
+          <p>"AI doesn't replace the thinking. It gives me more time to focus on it."</p>
         </div>
       </div>
-    </section>
-
-    <!-- Wave: pink about → cream-lt projects -->
-    <div class="wave-sep" style="background:#F2B8C0;" aria-hidden="true">
-      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,32 C480,80 960,8 1440,48 L1440,80 L0,80 Z" fill="#FBF8F2"/>
-      </svg>
-    </div>
-
-    <!-- ============================================================
-         SELECTED PROJECTS
-         TO CUSTOMIZE: Replace placeholder divs with <img> tags.
-         ============================================================ -->
-    <section id="projects" class="section bg-cream-lt">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">Selected Work</span>
-          <h2 class="section-heading">Projects</h2>
-          <p class="section-desc">
-            A mix of client work, personal projects, and design experiments.
-            Case studies are being written — check back soon.
-          </p>
+      <div class="about-portrait reveal reveal-d2">
+        <!-- To use a real photo, replace this <div class="photo-ph"> with:
+             <img class="photo-img" src="images/about.jpg" alt="Laila Arslan"/> -->
+        <div class="photo-ph"></div>
+        <div class="spin-badge spin-slow" style="position:absolute;width:104px;height:104px;right:-22px;top:-26px;z-index:4">
+          <span class="sb-in">Visual<br/>+ UX<br/>craft ✱</span>
         </div>
+        <svg class="doodle float-c" style="left:-18px;bottom:-28px" width="120" height="16" viewBox="0 0 210 22" fill="none" stroke="var(--ink)" stroke-width="3.4" stroke-linecap="round" aria-hidden="true"><path d="M3 12C16 3 27 3 38 12s22 9 35 0 22-9 35 0 22 9 35 0 22-9 35 0"/></svg>
+      </div>
+    </div>
+    <div class="about-meta reveal">
+      <div class="meta-item"><div class="meta-k">Based in</div><div class="meta-v">Västerås, Sweden</div></div>
+      <div class="meta-item"><div class="meta-k">Available for</div><div class="meta-v">Full-time roles · Freelance</div></div>
+      <div class="meta-item"><div class="meta-k">Open to</div><div class="meta-v">Remote · Hybrid · On-site</div></div>
+    </div>
+  </div>
+</section>
 
-        <div class="projects-grid">
+<!-- ========================= PROJECTS ========================= -->
+<section class="section projects" id="work">
+  <svg class="wave-top" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 70 L0 34 C 180 4 320 4 480 30 C 660 60 760 60 940 32 C 1120 6 1280 6 1440 34 L1440 70 Z" fill="var(--cream-2)"/>
+  </svg>
+  <div class="wrap">
+    <div class="reveal">
+      <span class="kicker"><span class="eyebrow-line"></span> Selected work</span>
+      <h2 class="h-sec" style="margin-top:16px">Projects</h2>
+      <p class="lead" style="margin-top:18px;max-width:620px">
+        A mix of client work, personal projects and design experiments. Case studies are being
+        written — project covers drop straight into these frames.
+      </p>
+    </div>
+    <div class="proj-grid">
 
-          <!-- Project 1: Battery Recycling -->
-          <div class="project-card fade-in">
-            <div class="project-image">
-              <!-- TO CUSTOMIZE: Replace with <img src="battery-recycling.jpg" alt="Battery recycling platform"> -->
-              <div class="img-placeholder img-ph--1"><span class="img-num" aria-hidden="true">01</span></div>
-            </div>
-            <div class="project-info">
-              <h3 class="project-title">Battery Recycling Platform</h3>
-              <p class="project-desc">
-                End-to-end UX/UI design for Northvolt Revolt's customer-facing battery recycling
-                service. Translating a technically complex industrial process into a clear, guided
-                digital experience for customers and business stakeholders.
-              </p>
-              <div class="project-tags">
-                <span class="tag">Service Design</span>
-                <span class="tag">UX Research</span>
-                <span class="tag">UI Design</span>
-                <span class="tag">Prototyping</span>
-                <span class="tag">Usability Testing</span>
-              </div>
-              <a href="#" class="btn btn-ghost" aria-disabled="true">Case study coming soon</a>
-            </div>
+      <!-- To add a cover image, place inside .proj-cover:
+           <img class="photo-img" src="images/project-1.jpg" alt="..."/> -->
+      <article class="proj reveal reveal-d1">
+        <div class="proj-cover cover-mint">
+          <span class="proj-num">01</span>
+        </div>
+        <div class="proj-body">
+          <h3 class="h-card">Battery Recycling Platform</h3>
+          <p class="body">End-to-end UX/UI design for a customer-facing battery recycling service. Translating a technically complex industrial process into a clear, guided digital experience.</p>
+          <div class="proj-tags">
+            <span class="chip">Service Design</span>
+            <span class="chip">UX Research</span>
+            <span class="chip">UI Design</span>
           </div>
+        </div>
+      </article>
 
-          <!-- Project 2: Education Platform -->
-          <div class="project-card fade-in">
-            <div class="project-image">
-              <!-- TO CUSTOMIZE: Replace with <img src="education-platform.jpg" alt="Education platform"> -->
-              <div class="img-placeholder img-ph--2"><span class="img-num" aria-hidden="true">02</span></div>
-            </div>
-            <div class="project-info">
-              <h3 class="project-title">Education Platform Experience</h3>
-              <p class="project-desc">
-                Redesigning how users find and engage with educational content. Research-driven
-                improvements to search, discovery, and information architecture across a
-                large-scale learning platform.
-              </p>
-              <div class="project-tags">
-                <span class="tag">Information Architecture</span>
-                <span class="tag">Search &amp; Discovery</span>
-                <span class="tag">User Flows</span>
-                <span class="tag">Usability Testing</span>
-              </div>
-              <a href="#" class="btn btn-ghost" aria-disabled="true">Coming soon</a>
-            </div>
+      <article class="proj reveal reveal-d2">
+        <div class="proj-cover cover-pink">
+          <span class="proj-num">02</span>
+        </div>
+        <div class="proj-body">
+          <h3 class="h-card">Education Platform Experience</h3>
+          <p class="body">Redesigning how users find and engage with educational content. Research-driven improvements to search, discovery, and information architecture across a large-scale learning platform.</p>
+          <div class="proj-tags">
+            <span class="chip">Information Architecture</span>
+            <span class="chip">Search &amp; Discovery</span>
+            <span class="chip">User Flows</span>
           </div>
+        </div>
+      </article>
 
-          <!-- Project 3: Community App -->
-          <div class="project-card fade-in">
-            <div class="project-image">
-              <!-- TO CUSTOMIZE: Replace with <img src="community-app.jpg" alt="Community app redesign"> -->
-              <div class="img-placeholder img-ph--3"><span class="img-num" aria-hidden="true">03</span></div>
-            </div>
-            <div class="project-info">
-              <h3 class="project-title">Community App Redesign</h3>
-              <p class="project-desc">
-                Identifying friction points and redesigning key user flows for a community-driven
-                application. Grounded in qualitative research, UX audit findings, and usability
-                sessions with real users.
-              </p>
-              <div class="project-tags">
-                <span class="tag">User Research</span>
-                <span class="tag">UX Audit</span>
-                <span class="tag">Interaction Design</span>
-                <span class="tag">Responsive Design</span>
-              </div>
-              <a href="#" class="btn btn-ghost" aria-disabled="true">Coming soon</a>
-            </div>
+      <article class="proj reveal reveal-d1">
+        <div class="proj-cover cover-yellow">
+          <span class="proj-num">03</span>
+        </div>
+        <div class="proj-body">
+          <h3 class="h-card">Community App Redesign</h3>
+          <p class="body">Identifying friction points and redesigning key user flows for a community-driven app. Grounded in qualitative research, a UX audit, and usability sessions.</p>
+          <div class="proj-tags">
+            <span class="chip">User Research</span>
+            <span class="chip">UX Audit</span>
+            <span class="chip">Interaction Design</span>
           </div>
+        </div>
+      </article>
 
-          <!-- Project 4: AI Portfolio -->
-          <div class="project-card fade-in">
-            <div class="project-image">
-              <!-- TO CUSTOMIZE: Replace with <img src="ai-portfolio.jpg" alt="AI-assisted portfolio build"> -->
-              <div class="img-placeholder img-ph--4"><span class="img-num" aria-hidden="true">04</span></div>
-            </div>
-            <div class="project-info">
-              <h3 class="project-title">AI-Assisted Portfolio Build</h3>
-              <p class="project-desc">
-                Using Claude and AI-assisted workflows to go from brief to working interactive
-                prototype in days. This portfolio site is a direct output of that process —
-                concept, design, and code in one sprint.
-              </p>
-              <div class="project-tags">
-                <span class="tag tag--ai">AI Workflow</span>
-                <span class="tag tag--ai">Rapid Prototyping</span>
-                <span class="tag">HTML / CSS / JS</span>
-                <span class="tag">Claude</span>
-                <span class="tag">GitHub Pages</span>
-              </div>
-              <a href="#" class="btn btn-ghost" aria-disabled="true">In progress</a>
-            </div>
+      <article class="proj reveal reveal-d2">
+        <div class="proj-cover cover-orange">
+          <span class="proj-num">04</span>
+        </div>
+        <div class="proj-body">
+          <h3 class="h-card">AI-Assisted Portfolio Build</h3>
+          <p class="body">Using AI-assisted workflows to go from brief to working interactive prototype in days. This portfolio is a direct output of that process — concept, design, and code in one sprint.</p>
+          <div class="proj-tags">
+            <span class="chip">AI Workflow</span>
+            <span class="chip">Rapid Prototyping</span>
+            <span class="chip">HTML / CSS / JS</span>
           </div>
+        </div>
+      </article>
 
+    </div>
+  </div>
+</section>
+
+<!-- ======================== EXPERIENCE ======================== -->
+<section class="section experience" id="experience">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="kicker"><span class="eyebrow-line"></span> Background</span>
+      <h2 class="h-sec" style="margin-top:16px">Experience</h2>
+    </div>
+    <div class="xp-list">
+
+      <div class="xp reveal reveal-d1">
+        <div>
+          <div class="xp-period">2024 — Now</div>
+          <span class="xp-type">Full-time</span>
+        </div>
+        <div>
+          <h3 class="xp-role">UX/UI Designer</h3>
+          <div class="xp-co">Keystone Education Group · Education Platforms</div>
+          <p class="body" style="max-width:760px">Designing customer-facing flows for a large education platform — leading research, IA, and high-fidelity UI, and shaping how users discover and engage with learning content.</p>
         </div>
       </div>
-    </section>
 
-    <!-- Wave: cream-lt projects → yellow experience -->
-    <div class="wave-sep" style="background:#FBF8F2;" aria-hidden="true">
-      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,48 C360,8 1080,72 1440,32 L1440,80 L0,80 Z" fill="#F5E340"/>
-      </svg>
-    </div>
-
-    <!-- ============================================================
-         EXPERIENCE
-         TO CUSTOMIZE: Fill in your dates, company names, and descriptions.
-         ============================================================ -->
-    <section id="experience" class="section bg-yellow">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">Background</span>
-          <h2 class="section-heading">Experience</h2>
+      <div class="xp reveal reveal-d2">
+        <div>
+          <div class="xp-period">2022 — 24</div>
+          <span class="xp-type">Full-time</span>
         </div>
-
-        <div class="experience-list">
-
-          <div class="experience-card fade-in">
-            <div class="exp-meta">
-              <span class="exp-period">2024 &mdash; Present</span>
-              <span class="exp-type">Full-time</span>
-            </div>
-            <div class="exp-content">
-              <h3 class="exp-title">UX/UI Designer</h3>
-              <p class="exp-company">[Current Company] &middot; Education Platforms</p>
-              <p class="exp-desc">
-                [Add your current role description — main responsibilities, key design decisions,
-                and the impact your work has had on users or the product.]
-              </p>
-            </div>
-          </div>
-
-          <div class="experience-card fade-in">
-            <div class="exp-meta">
-              <span class="exp-period">[Year] &mdash; [Year]</span>
-              <span class="exp-type">Full-time</span>
-            </div>
-            <div class="exp-content">
-              <h3 class="exp-title">UX/UI Designer</h3>
-              <p class="exp-company">Northvolt Revolt</p>
-              <p class="exp-desc">
-                Designed the customer-facing digital platform for Northvolt Revolt's battery
-                recycling service. Led UX research, wireframing, high-fidelity UI design, and
-                usability testing — translating complex industrial workflows into clear, guided
-                digital experiences for customers and stakeholders.
-              </p>
-            </div>
-          </div>
-
-          <div class="experience-card fade-in">
-            <div class="exp-meta">
-              <span class="exp-period">[Year]</span>
-              <span class="exp-type">Internship</span>
-            </div>
-            <div class="exp-content">
-              <h3 class="exp-title">UX Design Intern</h3>
-              <p class="exp-company">GoFriendly</p>
-              <p class="exp-desc">
-                [Add what you worked on at GoFriendly — your responsibilities,
-                what you designed, and any key contributions or outcomes.]
-              </p>
-            </div>
-          </div>
-
-          <div class="experience-card fade-in">
-            <div class="exp-meta">
-              <span class="exp-period">Ongoing</span>
-              <span class="exp-type">Freelance</span>
-            </div>
-            <div class="exp-content">
-              <h3 class="exp-title">Freelance Designer &amp; Artist</h3>
-              <p class="exp-company">Independent</p>
-              <p class="exp-desc">
-                Visual design, illustration, and brand identity work for independent clients.
-                Maintaining a strong foundation in aesthetics and craft that informs every
-                aspect of my UX work.
-              </p>
-            </div>
-          </div>
-
+        <div>
+          <h3 class="xp-role">UX/UI Designer</h3>
+          <div class="xp-co">Northvolt Revolt</div>
+          <p class="body" style="max-width:760px">Designed the customer-facing digital platform for a battery recycling service. Led UX research, wireframing, high-fidelity UI design and usability testing end to end.</p>
         </div>
       </div>
-    </section>
 
-    <!-- Wave: yellow experience → cream skills -->
-    <div class="wave-sep" style="background:#F5E340;" aria-hidden="true">
-      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,32 C480,80 960,8 1440,48 L1440,80 L0,80 Z" fill="#F5EFE0"/>
-      </svg>
-    </div>
-
-    <!-- ============================================================
-         SKILLS
-         TO CUSTOMIZE: Add, remove, or edit any skills below.
-         ============================================================ -->
-    <section id="skills" class="section bg-cream">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">Capabilities</span>
-          <h2 class="section-heading">Skills</h2>
+      <div class="xp reveal reveal-d1">
+        <div>
+          <div class="xp-period">2021 — 22</div>
+          <span class="xp-type">Internship</span>
         </div>
-
-        <div class="skills-grid">
-
-          <div class="skill-group sg--research fade-in">
-            <div class="skill-group-header">
-              <h3 class="skill-group-title">UX Research &amp; Strategy</h3>
-              <svg class="group-star" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-                  <line x1="10" y1="1" x2="10" y2="19"/>
-                  <line x1="1" y1="10" x2="19" y2="10"/>
-                  <line x1="3.2" y1="3.2" x2="16.8" y2="16.8"/>
-                  <line x1="16.8" y1="3.2" x2="3.2" y2="16.8"/>
-                </g>
-              </svg>
-            </div>
-            <div class="skill-tags">
-              <span class="tag">User Interviews</span>
-              <span class="tag">Usability Testing</span>
-              <span class="tag">Thematic Analysis</span>
-              <span class="tag">Journey Mapping</span>
-              <span class="tag">Affinity Mapping</span>
-              <span class="tag">Competitive Analysis</span>
-              <span class="tag">Problem Framing</span>
-            </div>
-          </div>
-
-          <div class="skill-group sg--ui fade-in">
-            <div class="skill-group-header">
-              <h3 class="skill-group-title">UI &amp; Visual Design</h3>
-              <svg class="group-star" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-                  <line x1="10" y1="1" x2="10" y2="19"/>
-                  <line x1="1" y1="10" x2="19" y2="10"/>
-                  <line x1="3.2" y1="3.2" x2="16.8" y2="16.8"/>
-                  <line x1="16.8" y1="3.2" x2="3.2" y2="16.8"/>
-                </g>
-              </svg>
-            </div>
-            <div class="skill-tags">
-              <span class="tag">High-fidelity UI</span>
-              <span class="tag">Design Systems</span>
-              <span class="tag">Typography</span>
-              <span class="tag">Layout &amp; Grid</span>
-              <span class="tag">Illustration</span>
-              <span class="tag">Visual Hierarchy</span>
-              <span class="tag">Accessibility</span>
-            </div>
-          </div>
-
-          <div class="skill-group sg--proto fade-in">
-            <div class="skill-group-header">
-              <h3 class="skill-group-title">Prototyping &amp; Testing</h3>
-              <svg class="group-star" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-                  <line x1="10" y1="1" x2="10" y2="19"/>
-                  <line x1="1" y1="10" x2="19" y2="10"/>
-                  <line x1="3.2" y1="3.2" x2="16.8" y2="16.8"/>
-                  <line x1="16.8" y1="3.2" x2="3.2" y2="16.8"/>
-                </g>
-              </svg>
-            </div>
-            <div class="skill-tags">
-              <span class="tag">Wireframing</span>
-              <span class="tag">Interactive Prototypes</span>
-              <span class="tag">Information Architecture</span>
-              <span class="tag">User Flows</span>
-              <span class="tag">Test Script Writing</span>
-              <span class="tag">Iteration Cycles</span>
-            </div>
-          </div>
-
-          <div class="skill-group sg--ai fade-in">
-            <div class="skill-group-header">
-              <h3 class="skill-group-title">AI-Assisted Workflow</h3>
-              <svg class="group-star" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-                  <line x1="10" y1="1" x2="10" y2="19"/>
-                  <line x1="1" y1="10" x2="19" y2="10"/>
-                  <line x1="3.2" y1="3.2" x2="16.8" y2="16.8"/>
-                  <line x1="16.8" y1="3.2" x2="3.2" y2="16.8"/>
-                </g>
-              </svg>
-            </div>
-            <div class="skill-tags">
-              <span class="tag">Claude Code</span>
-              <span class="tag">Figma Make</span>
-              <span class="tag">ChatGPT</span>
-              <span class="tag">AI Prototyping</span>
-              <span class="tag">Research Synthesis</span>
-              <span class="tag">Prompt Crafting</span>
-              <span class="tag">Rapid Concept Exploration</span>
-            </div>
-          </div>
-
-          <div class="skill-group sg--tools fade-in">
-            <div class="skill-group-header">
-              <h3 class="skill-group-title">Tools &amp; Code</h3>
-              <svg class="group-star" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-                  <line x1="10" y1="1" x2="10" y2="19"/>
-                  <line x1="1" y1="10" x2="19" y2="10"/>
-                  <line x1="3.2" y1="3.2" x2="16.8" y2="16.8"/>
-                  <line x1="16.8" y1="3.2" x2="3.2" y2="16.8"/>
-                </g>
-              </svg>
-            </div>
-            <div class="skill-tags">
-              <span class="tag">Figma</span>
-              <span class="tag">FigJam</span>
-              <span class="tag">Miro</span>
-              <span class="tag">Notion</span>
-              <span class="tag">HTML / CSS</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">GitHub</span>
-              <span class="tag">GitHub Pages</span>
-            </div>
-          </div>
-
+        <div>
+          <h3 class="xp-role">UX Design Intern</h3>
+          <div class="xp-co">GoFriendly</div>
+          <p class="body" style="max-width:760px">Supported research and interface design across product features — contributing to user flows, wireframes and design-system components alongside the core team.</p>
         </div>
       </div>
-    </section>
 
-    <!-- Wave: cream skills → chocolate process -->
-    <div class="wave-sep" style="background:#F5EFE0;" aria-hidden="true">
-      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,48 C360,8 1080,72 1440,32 L1440,80 L0,80 Z" fill="#2A1508"/>
-      </svg>
-    </div>
-
-    <!-- ============================================================
-         AI-ASSISTED WORKFLOW / PROCESS
-         ============================================================ -->
-    <section id="ai-workflow" class="section bg-dark">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">Process</span>
-          <h2 class="section-heading">How AI fits into my design process</h2>
-          <p class="section-desc">
-            I use AI as a thinking partner and accelerator — not a replacement for user
-            understanding. Here's where it adds real value in my workflow.
-          </p>
+      <div class="xp reveal reveal-d2">
+        <div>
+          <div class="xp-period">Ongoing</div>
+          <span class="xp-type">Freelance</span>
         </div>
-
-        <div class="workflow-steps">
-
-          <div class="workflow-step fade-in">
-            <span class="step-number">01</span>
-            <h3 class="step-title">Brief &amp; Discovery</h3>
-            <p class="step-desc">
-              Using AI to analyze briefs, identify gaps in the framing, and surface
-              the right questions before user research begins.
-            </p>
-          </div>
-
-          <div class="workflow-step fade-in">
-            <span class="step-number">02</span>
-            <h3 class="step-title">Research Synthesis</h3>
-            <p class="step-desc">
-              AI-assisted clustering of interview notes, thematic analysis across
-              sessions, and faster identification of patterns — without losing
-              qualitative nuance.
-            </p>
-          </div>
-
-          <div class="workflow-step fade-in">
-            <span class="step-number">03</span>
-            <h3 class="step-title">Concept Exploration</h3>
-            <p class="step-desc">
-              Rapidly generating and stress-testing design directions, content
-              structures, and IA options — exploring more ground in less time.
-            </p>
-          </div>
-
-          <div class="workflow-step fade-in">
-            <span class="step-number">04</span>
-            <h3 class="step-title">Prototyping</h3>
-            <p class="step-desc">
-              Using AI to build interactive prototypes faster. Moving from a
-              written brief to a testable artifact in days — this portfolio
-              being one example of that workflow.
-            </p>
-          </div>
-
-          <div class="workflow-step fade-in">
-            <span class="step-number">05</span>
-            <h3 class="step-title">Usability Testing</h3>
-            <p class="step-desc">
-              Drafting test scripts, generating edge-case scenarios, and
-              synthesizing post-test findings to accelerate the iteration cycle.
-            </p>
-          </div>
-
+        <div>
+          <h3 class="xp-role">Freelance Designer &amp; Artist</h3>
+          <div class="xp-co">Independent</div>
+          <p class="body" style="max-width:760px">Visual design, illustration and brand identity for independent clients — keeping a strong foundation in craft and aesthetics that informs every part of my UX work.</p>
         </div>
       </div>
-    </section>
 
-    <!-- Wave: chocolate process → red contact -->
-    <div class="wave-sep" style="background:#2A1508;" aria-hidden="true">
-      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,32 C480,80 960,8 1440,48 L1440,80 L0,80 Z" fill="#E0342A"/>
-      </svg>
     </div>
+  </div>
+</section>
 
-    <!-- ============================================================
-         CONTACT
-         TO CUSTOMIZE: Update email, LinkedIn URL, and location.
-         ============================================================ -->
-    <section id="contact" class="section bg-red">
-      <div class="container">
-        <div class="contact-content">
-          <span class="section-label">Contact</span>
-          <h2 class="section-heading">Let's talk.</h2>
-          <!-- Hand-drawn wavy underline — cream on red -->
-          <div class="contact-underline" aria-hidden="true">
-            <svg viewBox="0 0 240 16" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-              <path d="M0 10 C36 4,84 16,134 9 C174 3,208 13,240 8"
-                    stroke="#FBF8F2" stroke-width="2.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <p class="contact-desc">
-            I'm currently open to new opportunities. If you're looking for a UX/UI Designer
-            with a strong research foundation and an AI-assisted workflow — I'd love to hear
-            from you.
-          </p>
-          <div class="contact-links">
-            <a href="mailto:laila.arslan1@gmail.com" class="btn btn-contact-primary">
-              laila.arslan1@gmail.com
-            </a>
-            <a href="https://linkedin.com/in/[your-username]" class="btn btn-contact-secondary"
-               target="_blank" rel="noopener noreferrer">
-              LinkedIn
-            </a>
-          </div>
-          <p class="contact-note">
-            Based in [Your location] &middot; Open to remote, hybrid, and on-site roles.
-          </p>
+<!-- ========================== SKILLS ========================== -->
+<section class="section skills">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="kicker"><span class="eyebrow-line"></span> Capabilities</span>
+      <h2 class="h-sec" style="margin-top:16px">Skills</h2>
+    </div>
+    <div class="skill-grid">
+
+      <div class="skill pink reveal reveal-d1">
+        <div class="skill-title" style="color:var(--ink)"><svg width="13" height="13" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1.5c1.4 11.8 6.7 17.1 18.5 18.5C26.7 21.4 21.4 26.7 20 38.5 18.6 26.7 13.3 21.4 1.5 20 13.3 18.6 18.6 13.3 20 1.5Z" fill="var(--ink)"/></svg> UX Research &amp; Strategy</div>
+        <div class="skill-chips">
+          <span class="chip">User Interviews</span><span class="chip">Usability Testing</span><span class="chip">Thematic Analysis</span><span class="chip">Journey Mapping</span><span class="chip">Affinity Mapping</span><span class="chip">Problem Framing</span>
         </div>
       </div>
-    </section>
 
-    <!-- Wave: red contact → cream footer -->
-    <div class="wave-sep" style="background:#E0342A;" aria-hidden="true">
-      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,48 C360,8 1080,72 1440,40 L1440,80 L0,80 Z" fill="#F5EFE0"/>
-      </svg>
+      <div class="skill mint reveal reveal-d2">
+        <div class="skill-title" style="color:var(--ink)"><svg width="13" height="13" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1.5c1.4 11.8 6.7 17.1 18.5 18.5C26.7 21.4 21.4 26.7 20 38.5 18.6 26.7 13.3 21.4 1.5 20 13.3 18.6 18.6 13.3 20 1.5Z" fill="var(--ink)"/></svg> UI &amp; Visual Design</div>
+        <div class="skill-chips">
+          <span class="chip">Design Systems</span><span class="chip">Typography</span><span class="chip">Layout &amp; Grid</span><span class="chip">Illustration</span><span class="chip">Accessibility</span><span class="chip">High-Fidelity UI</span>
+        </div>
+      </div>
+
+      <div class="skill plain reveal reveal-d1">
+        <div class="skill-title" style="color:var(--ink)"><svg width="13" height="13" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1.5c1.4 11.8 6.7 17.1 18.5 18.5C26.7 21.4 21.4 26.7 20 38.5 18.6 26.7 13.3 21.4 1.5 20 13.3 18.6 18.6 13.3 20 1.5Z" fill="var(--ink)"/></svg> Prototyping &amp; Testing</div>
+        <div class="skill-chips">
+          <span class="chip">Wireframing</span><span class="chip">Interactive Prototypes</span><span class="chip">Information Architecture</span><span class="chip">User Flows</span><span class="chip">Test Script Writing</span>
+        </div>
+      </div>
+
+      <div class="skill yellow reveal reveal-d2">
+        <div class="skill-title" style="color:var(--ink)"><svg width="13" height="13" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1.5c1.4 11.8 6.7 17.1 18.5 18.5C26.7 21.4 21.4 26.7 20 38.5 18.6 26.7 13.3 21.4 1.5 20 13.3 18.6 18.6 13.3 20 1.5Z" fill="var(--ink)"/></svg> AI-Assisted Workflow <span class="badge-new">★ AI</span></div>
+        <div class="skill-chips">
+          <span class="chip">Claude</span><span class="chip">Figma Make</span><span class="chip">ChatGPT</span><span class="chip">AI Prototyping</span><span class="chip">Research Synthesis</span><span class="chip">Prompt Crafting</span>
+        </div>
+      </div>
+
+      <div class="skill dark wide reveal">
+        <div class="skill-title">Tools &amp; Code</div>
+        <div class="skill-chips">
+          <span class="chip">Figma</span><span class="chip">FigJam</span><span class="chip">Miro</span><span class="chip">Notion</span><span class="chip">HTML / CSS</span><span class="chip">JavaScript</span><span class="chip">GitHub</span><span class="chip">GitHub Pages</span>
+        </div>
+      </div>
+
     </div>
+  </div>
+</section>
 
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <a href="#" class="footer-logo">
-        <span class="logo-mark logo-mark--sm" aria-hidden="true">LA</span>
-        <span class="footer-name">Laila Arslan</span>
-      </a>
-      <p class="footer-copy">&copy; 2026 &middot; UX/UI Designer</p>
+<!-- ========================= PROCESS ========================= -->
+<section class="section process" id="process">
+  <svg class="wave-top" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 70 L0 36 C 200 6 340 6 520 32 C 690 56 800 56 980 30 C 1150 6 1290 6 1440 36 L1440 70 Z" fill="var(--ink)"/>
+  </svg>
+  <svg class="doodle float-a" style="right:8%;top:120px;opacity:.9" width="30" height="30" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1.5c1.4 11.8 6.7 17.1 18.5 18.5C26.7 21.4 21.4 26.7 20 38.5 18.6 26.7 13.3 21.4 1.5 20 13.3 18.6 18.6 13.3 20 1.5Z" fill="var(--yellow)"/></svg>
+  <svg class="doodle float-c" style="left:4%;bottom:80px" width="64" height="64" viewBox="0 0 90 90" fill="none" stroke="rgba(247,241,225,.35)" stroke-width="3.4" stroke-linecap="round" aria-hidden="true"><line x1="61" y1="45" x2="85" y2="45"/><line x1="56.31" y1="56.31" x2="73.28" y2="73.28"/><line x1="45" y1="61" x2="45" y2="85"/><line x1="33.69" y1="56.31" x2="16.72" y2="73.28"/><line x1="29" y1="45" x2="5" y2="45"/><line x1="33.69" y1="33.69" x2="16.72" y2="16.72"/><line x1="45" y1="29" x2="45" y2="5"/><line x1="56.31" y1="33.69" x2="73.28" y2="16.72"/></svg>
+  <div class="wrap">
+    <div class="reveal" style="max-width:760px">
+      <span class="kicker"><svg width="13" height="13" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1.5c1.4 11.8 6.7 17.1 18.5 18.5C26.7 21.4 21.4 26.7 20 38.5 18.6 26.7 13.3 21.4 1.5 20 13.3 18.6 18.6 13.3 20 1.5Z" fill="var(--yellow)"/></svg> Process</span>
+      <h2 class="h-sec" style="margin-top:16px">
+        How AI fits into my
+        <span class="mark mark-orange"><span>design process</span></span>
+      </h2>
+      <p class="lead" style="margin-top:24px">
+        I use AI as a thinking partner and accelerator — not a replacement for user
+        understanding. Here's where it adds real value across my workflow.
+      </p>
     </div>
-  </footer>
+    <div class="step-grid">
+      <div class="step reveal reveal-d1">
+        <div class="step-num">01</div>
+        <h3>Discovery &amp; Framing</h3>
+        <p>Turning a fragmented brief into sharp research questions before any pixels — mapping stakeholders, goals and the real problem to solve.</p>
+      </div>
+      <div class="step reveal reveal-d2">
+        <div class="step-num">02</div>
+        <h3>Research Synthesis</h3>
+        <p>AI-assisted clustering of interview notes, thematic analysis across sessions, and faster identification of patterns and pain points.</p>
+      </div>
+      <div class="step reveal reveal-d3">
+        <div class="step-num">03</div>
+        <h3>Concept Exploration</h3>
+        <p>Rapidly generating and stress-testing design directions, content structures and information-architecture options.</p>
+      </div>
+      <div class="step reveal reveal-d4">
+        <div class="step-num">04</div>
+        <h3>Prototyping</h3>
+        <p>Using AI to build interactive prototypes faster — moving from a written brief to a testable artifact in days, not weeks.</p>
+      </div>
+      <div class="step reveal reveal-d1">
+        <div class="step-num">05</div>
+        <h3>Usability Testing</h3>
+        <p>Drafting test scripts, generating edge-case scenarios and synthesizing post-test findings into clear next steps.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <button class="scroll-top" aria-label="Scroll to top" title="Back to top">↑</button>
+<!-- ========================= CONTACT ========================= -->
+<section class="section contact" id="contact">
+  <svg class="wave-top" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 70 L0 36 C 200 6 340 6 520 32 C 690 56 800 56 980 30 C 1150 6 1290 6 1440 36 L1440 70 Z" fill="var(--orange)"/>
+  </svg>
+  <svg class="doodle float-a" style="right:10%;top:90px" width="34" height="34" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1.5c1.4 11.8 6.7 17.1 18.5 18.5C26.7 21.4 21.4 26.7 20 38.5 18.6 26.7 13.3 21.4 1.5 20 13.3 18.6 18.6 13.3 20 1.5Z" fill="rgba(247,241,225,.9)"/></svg>
+  <svg class="doodle float-b" style="left:6%;bottom:90px" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M14 2.5C13.4 8 13 11 13 14s.4 6 1 11.5c.6-5.5 1-8.5 1-11.5s-.4-6-1-11.5Z" fill="rgba(247,241,225,.6)"/><path d="M2.5 14C8 13.4 11 13 14 13s6 .4 11.5 1C20 14.6 17 15 14 15s-6-.4-11.5-1Z" fill="rgba(247,241,225,.6)"/></svg>
+  <svg class="doodle" style="right:6%;bottom:70px" width="74" height="74" viewBox="0 0 74 74" fill="rgba(247,241,225,.45)" aria-hidden="true"><circle cx="9" cy="9" r="4.4"/><circle cx="37" cy="9" r="4.4"/><circle cx="65" cy="9" r="4.4"/><circle cx="9" cy="37" r="4.4"/><circle cx="37" cy="37" r="4.4"/><circle cx="65" cy="37" r="4.4"/><circle cx="9" cy="65" r="4.4"/><circle cx="37" cy="65" r="4.4"/><circle cx="65" cy="65" r="4.4"/></svg>
+  <div class="wrap">
+    <div class="reveal" style="position:relative;z-index:2">
+      <span class="kicker"><span class="eyebrow-line"></span> Contact</span>
+      <h2>Let's talk.</h2>
+      <div style="position:relative;width:230px;height:16px;margin:14px 0 0">
+        <svg width="230" height="16" viewBox="0 0 320 16" preserveAspectRatio="none" fill="none" stroke="rgba(247,241,225,.8)" stroke-width="5" stroke-linecap="round" aria-hidden="true"><path d="M4 9C40 2 60 2 96 9s56 6 92-1 56-4 124 1"/></svg>
+      </div>
+      <p class="lead">
+        I'm currently open to new opportunities. If you're looking for a UX/UI Designer with a
+        strong research foundation and an AI-assisted workflow — I'd love to hear from you.
+      </p>
+      <div class="contact-actions">
+        <a class="btn btn-light" href="mailto:laila.arslan1@gmail.com">laila.arslan1@gmail.com</a>
+        <a class="btn btn-ghost-light" href="#">LinkedIn</a>
+      </div>
+      <p class="contact-foot">Based in Västerås, Sweden · Open to remote, hybrid and on-site roles.</p>
+    </div>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+</main>
+
+<!-- ========================== FOOTER ========================== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <a class="logo" href="#top"><span class="logo-mark">LA</span><span>Laila Arslan</span></a>
+    <div class="footer-links">
+      <a href="#work">Work</a><a href="#about">About</a><a href="#process">Process</a>
+      <a href="mailto:laila.arslan1@gmail.com">Email</a><a href="#">LinkedIn</a>
+    </div>
+    <div class="footer-copy">© 2026 · UX/UI Designer</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
