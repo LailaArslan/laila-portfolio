@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Revolt Customer Portal — Case Study · Laila Arslan</title>
+<meta name="description" content="UX/UI case study: turning a complex, multi-stakeholder battery-recycling service into a clear, trackable customer portal — service design, research, journey mapping, task flows, UI, usability testing and focused MVP prioritization."/>
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23241408'/%3E%3Ctext x='32' y='43' font-family='Archivo,Arial,sans-serif' font-size='27' font-weight='800' fill='%23F7F1E1' text-anchor='middle'%3ELA%3C/text%3E%3C/svg%3E"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Archivo:wght@400;600;700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../styles.css"/>
+<link rel="stylesheet" href="case-study-v2.css"/>
+</head>
+<body class="cs2">
+
+<template id="__bundler_thumbnail">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#241408"/><text x="32" y="43" font-family="Archivo,Arial,sans-serif" font-size="26" font-weight="800" fill="#F7F1E1" text-anchor="middle">LA</text></svg>
+</template>
+
+<!-- ============================ NAV ============================ -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="logo" href="../index.html#top">
+      <span class="logo-mark">LA</span>
+      <span>Laila Arslan</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#process">Process</a>
+      <a href="../index.html#contact" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- ============================================================ -->
+<!-- 00 · OPENING / HOOK                                          -->
+<!-- ============================================================ -->
+<header class="cs2-head" data-screen-label="Opening">
+  <div class="wrap">
+    <a class="cs2-back" href="../index.html#work">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      Back to work
+    </a>
+
+    <span class="head-eyebrow"><span class="dot"></span> Case Study · Service &amp; Product Design · B2B</span>
+
+    <p class="head-project">Revolt Customer Portal</p>
+
+    <h1 class="cs2-title">A portal that makes a complex recycling service <span class="mark mark-mint"><span>understandable</span></span>, trackable &amp; actionable.</h1>
+
+    <div class="head-grid">
+      <div class="head-col reveal">
+        <p>A customer-facing portal for making a complex battery recycling service <strong>understandable, trackable and actionable</strong>. Northvolt <strong>Revolt</strong> recycles end-of-life batteries — an industrial service tangled in logistics, compliance and hazardous-material handling — and I designed the portal that turns that machinery into a guided experience business users can actually navigate.</p>
+
+        <div class="byline">
+          <div class="by"><span class="byk">My role</span><span class="byv">UX/UI Designer — research → UI → testing</span></div>
+          <div class="by"><span class="byk">Timeline</span><span class="byv">May 2023 – March 2025</span></div>
+          <div class="by"><span class="byk">Team</span><span class="byv">PMs, stakeholders, developers, domain experts</span></div>
+          <div class="by"><span class="byk">Tools</span><span class="byv">Figma · FigJam · Miro · Notion</span></div>
+        </div>
+
+        <div class="head-tags">
+          <span class="chip">Service Design</span>
+          <span class="chip">UX Research</span>
+          <span class="chip">Journey Mapping</span>
+          <span class="chip">Task Flows</span>
+          <span class="chip">UI Design</span>
+          <span class="chip">Usability Testing</span>
+        </div>
+      </div>
+
+      <div class="head-shot reveal reveal-d1">
+        <div class="anno">
+          <span class="pen">one place for status, requests &amp; documents</span>
+          <svg width="62" height="58" viewBox="0 0 70 64" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M60 6C40 2 14 10 9 30c-4 17 10 27 24 28"/><path d="M33 46l-6 13 14 1"/></svg>
+        </div>
+        <figure class="frame">
+          <img src="../images/revolt-hero.png" alt="Revolt customer portal — main dashboard showing sent items, recycled materials, KPIs and follow-up shortcuts"/>
+        </figure>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================ -->
+<!-- 01 · THE MESSY SERVICE                                        -->
+<!-- ============================================================ -->
+<section class="chapter" id="messy" data-screen-label="01 · The messy service">
+  <div class="wrap">
+    <div class="chap">
+      <div class="chap-head">
+        <span class="chap-num">01</span>
+        <span class="chap-kicker"><span class="eyebrow-line"></span> The messy service</span>
+      </div>
+      <h2 class="chap-title">Battery recycling is simple to <span class="mark"><span>say</span></span> — and brutally complex to do.</h2>
+      <p class="chap-lead">Before a single screen, the service was a sprawl of moving parts owned by different teams. Customers saw none of it clearly — just scattered emails, unclear steps and no way to know what was happening with their batteries.</p>
+    </div>
+
+    <div class="wall reveal">
+      <div class="wall-art">
+        <span class="tape t1"></span>
+        <span class="tape t2"></span>
+        <figure class="frame cream scrollable">
+          <img src="../images/revolt-journey-current.png" alt="The current as-is customer journey — OEM actions, goals, needs and channels across awareness, consideration, purchase, shipping goods and new batteries, dotted with red pain-point notes and open 'what problem do they face?' questions"/>
+        </figure>
+        <span class="artlabel"><span class="tag-pill orange">As-is</span> <span class="pen">the service as it really ran</span></span>
+      </div>
+
+      <div class="wall-notes">
+        <div class="note n1"><small>Logistics</small>Pallets, weights, pick-up locations &amp; transport hand-offs</div>
+        <div class="note n2"><small>Compliance</small>Certificates &amp; traceability needed — surfaced too late</div>
+        <div class="note n3"><small>Hazardous material</small>Strict handling rules most customers don't know</div>
+        <div class="note n4"><small>Pricing &amp; reporting</small>Gate fees, invoices, impact figures — all elsewhere</div>
+        <div class="note n5"><small>Multiple teams</small>Operations · sustainability · sales · Northvolt&nbsp;IT</div>
+        <div class="note n6"><small>Status &amp; comms</small>"Where is my request?" — no single answer</div>
+      </div>
+    </div>
+
+    <div class="messy-quote reveal">
+      <span class="qbar"></span>
+      <div>
+        <p>"We understood the process internally. Our customers never saw a clear version of it."</p>
+        <cite>— Stakeholder interview, synthesis phase</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 02 · MAPPING THE TRUTH                                        -->
+<!-- ============================================================ -->
+<section class="chapter" id="mapping" data-screen-label="02 · Mapping the truth">
+  <div class="wrap">
+    <div class="chap">
+      <div class="chap-head">
+        <span class="chap-num">02</span>
+        <span class="chap-kicker"><span class="eyebrow-line"></span> Mapping the truth</span>
+      </div>
+      <h2 class="chap-title">The moment the service became <span class="mark mark-mint"><span>understandable</span></span>.</h2>
+      <p class="chap-lead">I started with people, not screens — interviewing stakeholders across operations, sustainability and sales, then mapping every need onto the real service. The goal: separate what a <em>customer</em> needs to do from what the <em>business</em> needs to capture.</p>
+    </div>
+
+    <div class="map-spread reveal">
+      <figure class="frame cream">
+        <img src="../images/revolt-need-map.png" alt="Need-mapping artifact — requirements gathered around the digital recycling platform, clustered by Revolt-automotive customers, logistics, and connected systems"/>
+      </figure>
+      <div class="map-aside">
+        <span class="pen">every screen now traces back to a real, documented need — not a guess.</span>
+        <div class="groups">
+          <div class="group-row"><span class="gn">1</span><div><h4>Customers managing shipments</h4><p>Booking pick-ups and tracking requests, requirements and status from one place.</p></div></div>
+          <div class="group-row"><span class="gn">2</span><div><h4>Internal support</h4><p>Onboarding accounts and setting customers up behind the scenes.</p></div></div>
+          <div class="group-row"><span class="gn">3</span><div><h4>Sustainability &amp; reporting</h4><p>Traceability and documents for compliance and impact reporting.</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="statline reveal">
+      <div class="stat">
+        <div class="sn">3</div>
+        <div class="st">Stakeholder mental models</div>
+        <div class="sd">Operations, sustainability and sales each saw a different service — the portal had to reconcile them.</div>
+      </div>
+      <div class="stat">
+        <div class="sn">7+</div>
+        <div class="st">Steps invisible to the customer</div>
+        <div class="sd">Key stages of the recycling journey happened entirely off-screen, quietly eroding trust.</div>
+      </div>
+      <div class="stat">
+        <div class="sn">1</div>
+        <div class="st">Source of truth, missing</div>
+        <div class="sd">Nothing showed status, requirements and documents together — the core gap to close.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 03 · FROM JOURNEY → FLOW   (dark reveal)                      -->
+<!-- ============================================================ -->
+<section class="chapter flowdark" id="flow" data-screen-label="03 · Journey to flow">
+  <div class="wrap">
+    <div class="chap on-dark">
+      <div class="chap-head">
+        <span class="chap-num">03</span>
+        <span class="chap-kicker"><span class="eyebrow-line"></span> From journey to flow</span>
+      </div>
+      <h2 class="chap-title">A sprawling service journey, resolved into a flow you can <span class="mark mark-mint"><span>build</span></span>.</h2>
+      <p class="chap-lead">This was the heart of the project. I mapped the desired end-to-end service for OEM customers — every stage, goal and need across the whole lifecycle — then resolved it into a clean, screen-by-screen task flow: the logic the whole portal is built on.</p>
+    </div>
+
+    <div class="ba reveal">
+      <div class="ba-step before">
+        <div class="ba-meta">
+          <span class="lbl">Before</span>
+          <span class="desc">The <strong>desired service journey</strong> for OEM customers — every stage, action, goal and need across the full lifecycle.</span>
+          <span class="tag-pill ghost">Service journey</span>
+        </div>
+        <figure class="frame on-dark-shadow scrollable">
+          <img src="../images/revolt-journey-oem.jpg" alt="The full OEM circular-customer journey map across awareness, consideration, purchase, request pick-up, material flow, withdrawal and new batteries"/>
+        </figure>
+      </div>
+
+      <div class="ba-bridge" aria-hidden="true">
+        <span class="pen">resolved into</span>
+        <svg width="46" height="74" viewBox="0 0 48 80" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6v58"/><path d="M9 50l15 16 15-16"/></svg>
+      </div>
+
+      <div class="ba-step after">
+        <div class="ba-meta">
+          <span class="lbl">After</span>
+          <span class="desc">One <strong>product task flow</strong> — order, location, package type, contents, submit, confirm — branching only where it must.</span>
+          <span class="tag-pill mint">Product task flow</span>
+        </div>
+        <figure class="frame on-dark-shadow scrollable">
+          <img src="../images/revolt-flowchart.png" alt="Pick-up flow for OEM — a clean left-to-right task flow from order pick-up through adding packages to submission and confirmation"/>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 04 · DESIGNING CONFIDENCE   (UI gallery)                      -->
+<!-- ============================================================ -->
+<section class="chapter" id="ui" data-screen-label="04 · Designing confidence">
+  <div class="wrap">
+    <div class="chap">
+      <div class="chap-head">
+        <span class="chap-num">04</span>
+        <span class="chap-kicker"><span class="eyebrow-line"></span> Designing confidence</span>
+      </div>
+      <h2 class="chap-title">The interface stays <span class="mark"><span>calm</span></span>, so the customer stays confident.</h2>
+      <p class="chap-lead">With the structure settled, the UI could do one thing at a time — clear status, requirements up front, and never asking the customer to understand the machinery behind it.</p>
+    </div>
+
+    <div class="gallery reveal">
+      <div class="g-item g-main">
+        <figure class="frame"><img src="../images/revolt-ui-1.png" alt="Pick-up order start screen — a short, guided introduction explaining the three steps to create a pick-up"/></figure>
+        <div class="g-cap"><span class="gt"><span class="gd"></span> Start a pick-up</span><span class="gs">A guided entry point that sets expectations — three steps, about ten minutes — before any complexity appears.</span></div>
+      </div>
+      <div class="g-item g-b">
+        <figure class="frame"><img src="../images/revolt-ui-2.png" alt="Follow-up orders table with clear status pills — pending, approved, draft — plus pick-up location, weights and tracking labels"/></figure>
+        <div class="g-cap"><span class="gt"><span class="gd"></span> Track every request</span><span class="gs">Status is never a mystery: pending, approved and draft states read at a glance, with documents attached.</span></div>
+      </div>
+      <div class="g-item g-c">
+        <figure class="frame"><img src="../images/revolt-ui-3.webp" alt="Order content side panel showing total packages, gross weight, contact info and a list of packages with locations"/></figure>
+        <div class="g-cap"><span class="gt"><span class="gd"></span> Package details &amp; documents</span><span class="gs">Everything for one order — packages, weights, contacts and labels — collected in a single focused panel.</span></div>
+      </div>
+    </div>
+
+    <div class="wirestrip reveal">
+      <div>
+        <div class="wlabel"><span class="wd"></span> Low-fi wireframe</div>
+        <figure class="frame soft"><img src="../images/revolt-wireframes.webp" alt="Low-fidelity wireframe of the dashboard establishing structure and hierarchy before any styling"/></figure>
+      </div>
+      <div class="w-arrow" aria-hidden="true">
+        <span class="pen">structure first,<br/>style after</span>
+        <svg width="58" height="34" viewBox="0 0 90 40" fill="none" stroke="var(--ink)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 20h70"/><path d="M62 8l16 12-16 12"/></svg>
+      </div>
+      <div>
+        <div class="wlabel"><span class="wd"></span> High-fidelity UI</div>
+        <figure class="frame soft"><img src="../images/revolt-ui-after.webp" alt="High-fidelity dashboard — the same layout resolved with type, spacing and clear data hierarchy"/></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 05 · TESTING & ITERATION   (finding → response ledger)        -->
+<!-- ============================================================ -->
+<section class="chapter" id="testing" data-screen-label="05 · Testing &amp; iteration">
+  <div class="wrap">
+    <div class="chap">
+      <div class="chap-head">
+        <span class="chap-num">05</span>
+        <span class="chap-kicker"><span class="eyebrow-line"></span> Testing &amp; iteration</span>
+      </div>
+      <h2 class="chap-title">Testing didn't validate the design — it <span class="mark"><span>changed</span></span> it.</h2>
+      <p class="chap-lead">I tested the prototype with representative users and let the findings drive the next iteration. Each thing they struggled with maps to a concrete change I made.</p>
+    </div>
+
+    <div class="ledger reveal">
+      <div class="lrow">
+        <div class="l-find">
+          <div class="ftag">Finding 01 · Navigation</div>
+          <p>Users couldn't tell where their request was in the process.</p>
+        </div>
+        <div class="l-conn" aria-hidden="true">
+          <span class="clabel">so I</span>
+          <svg width="48" height="20" viewBox="0 0 60 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h48"/><path d="M42 4l10 8-10 8"/></svg>
+        </div>
+        <div class="l-resp">
+          <span class="rcheck"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <div><div class="rk">Design response</div><p>Added a persistent status stepper on every screen, so the current stage and what's next are always visible.</p></div>
+        </div>
+      </div>
+
+      <div class="lrow">
+        <div class="l-find">
+          <div class="ftag">Finding 02 · Requirements</div>
+          <p>Compliance requirements appeared too late, causing rework.</p>
+        </div>
+        <div class="l-conn" aria-hidden="true">
+          <span class="clabel">so I</span>
+          <svg width="48" height="20" viewBox="0 0 60 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h48"/><path d="M42 4l10 8-10 8"/></svg>
+        </div>
+        <div class="l-resp">
+          <span class="rcheck"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <div><div class="rk">Design response</div><p>Surfaced requirements up front as a checklist at request creation, with inline guidance instead of post-submission errors.</p></div>
+        </div>
+      </div>
+
+      <div class="lrow">
+        <div class="l-find">
+          <div class="ftag">Finding 03 · Language</div>
+          <p>Internal, industrial terminology confused non-expert users.</p>
+        </div>
+        <div class="l-conn" aria-hidden="true">
+          <span class="clabel">so I</span>
+          <svg width="48" height="20" viewBox="0 0 60 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h48"/><path d="M42 4l10 8-10 8"/></svg>
+        </div>
+        <div class="l-resp">
+          <span class="rcheck"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <div><div class="rk">Design response</div><p>Rewrote labels in plain customer language and added short, contextual definitions for unavoidable technical terms.</p></div>
+        </div>
+      </div>
+
+      <div class="lrow">
+        <div class="l-find">
+          <div class="ftag">Finding 04 · Confidence</div>
+          <p>No confirmation after key actions left users unsure it worked.</p>
+        </div>
+        <div class="l-conn" aria-hidden="true">
+          <span class="clabel">so I</span>
+          <svg width="48" height="20" viewBox="0 0 60 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h48"/><path d="M42 4l10 8-10 8"/></svg>
+        </div>
+        <div class="l-resp">
+          <span class="rcheck"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <div><div class="rk">Design response</div><p>Added clear confirmation states and next-step prompts after every submission, closing the trust gap from research.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 06 · FOCUSED MVP   (priority spectrum)                        -->
+<!-- ============================================================ -->
+<section class="chapter" id="mvp" data-screen-label="06 · Focused MVP">
+  <div class="wrap">
+    <div class="chap">
+      <div class="chap-head">
+        <span class="chap-num">06</span>
+        <span class="chap-kicker"><span class="eyebrow-line"></span> Focused MVP</span>
+      </div>
+      <h2 class="chap-title">Not everything could be built at once — so we put <span class="mark"><span>trust</span></span> first.</h2>
+      <p class="chap-lead">A MoSCoW model kept scope honest. The features that built customer trust in the very first interaction defined the MVP; everything else was sequenced by evidence, not opinion.</p>
+    </div>
+
+    <div class="spectrum reveal">
+      <div class="spec-axis">
+        <div class="spec-col c1">
+          <span class="spec-dot"></span>
+          <div class="spec-node"><span class="nt">Must</span><span class="nw">MVP</span></div>
+          <ul class="spec-list">
+            <li>Request a recycling pick-up</li>
+            <li>Live status tracking</li>
+            <li>Up-front requirements checklist</li>
+            <li>Document upload &amp; storage</li>
+          </ul>
+        </div>
+        <div class="spec-col c2">
+          <span class="spec-dot"></span>
+          <div class="spec-node"><span class="nt">Should</span><span class="nw">Fast-follow</span></div>
+          <ul class="spec-list">
+            <li>In-portal messaging</li>
+            <li>Compliance reporting export</li>
+            <li>Multi-site account view</li>
+          </ul>
+        </div>
+        <div class="spec-col c3">
+          <span class="spec-dot"></span>
+          <div class="spec-node"><span class="nt">Could</span><span class="nw">Later</span></div>
+          <ul class="spec-list">
+            <li>Sustainability impact dashboard</li>
+            <li>Saved request templates</li>
+            <li>Role-based permissions</li>
+          </ul>
+        </div>
+        <div class="spec-col c4">
+          <span class="spec-dot"></span>
+          <div class="spec-node"><span class="nt">Won't</span><span class="nw">Not now</span></div>
+          <ul class="spec-list">
+            <li>Public marketplace features</li>
+            <li>Automated pricing engine</li>
+            <li>Native mobile app</li>
+          </ul>
+        </div>
+      </div>
+      <p class="spec-legend">
+        <svg width="16" height="16" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1.5c1.4 11.8 6.7 17.1 18.5 18.5C26.7 21.4 21.4 26.7 20 38.5 18.6 26.7 13.3 21.4 1.5 20 13.3 18.6 18.6 13.3 20 1.5Z" fill="var(--orange)"/></svg>
+        Read left to right: trust-building essentials come first, ambition deferred with intent. The strike-through items were deliberately ruled out of scope, not forgotten.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 07 · CONTRIBUTION + CLOSE   (orange payoff)                   -->
+<!-- ============================================================ -->
+<section class="chapter close" id="contribution" data-screen-label="07 · My contribution">
+  <div class="wrap">
+    <div class="chap">
+      <div class="chap-head">
+        <span class="chap-kicker"><span class="eyebrow-line"></span> My contribution</span>
+      </div>
+    </div>
+    <p class="close-statement">I turned an undefined, multi-stakeholder service into a <span class="mark"><span>structured portal concept</span></span> — mapping needs, designing task flows, testing prototypes and prioritizing a focused MVP.</p>
+    <p class="close-sub">The hardest, most valuable work happened before any styling: sequencing a complex service into something a non-expert could trust and follow. That's the part of design I care about most.</p>
+
+    <div class="coda">
+      <div class="coda-item">
+        <div class="cn">01</div>
+        <h4>Structure is the design</h4>
+        <p>In complex B2B services, the real work is sequencing and clarity — long before visual polish.</p>
+      </div>
+      <div class="coda-item">
+        <div class="cn">02</div>
+        <h4>Trust is built in steps</h4>
+        <p>Visibility, confirmation and plain language did more for confidence than any single feature.</p>
+      </div>
+      <div class="coda-item">
+        <div class="cn">03</div>
+        <h4>Prioritize by evidence</h4>
+        <p>Research and testing — not opinion — decided what earned a place in the first release.</p>
+      </div>
+    </div>
+
+    <div class="close-cta">
+      <a class="btn btn-light" href="../index.html#work">← Back to all work</a>
+      <a class="btn btn-ghost-light" href="../index.html#contact">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <a class="logo" href="../index.html#top"><span class="logo-mark">LA</span><span>Laila Arslan</span></a>
+    <div class="footer-links">
+      <a href="../index.html#work">Work</a><a href="../index.html#about">About</a><a href="../index.html#process">Process</a>
+      <a href="/cdn-cgi/l/email-protection#96faf7fffaf7b8f7e4e5faf7f8a7d6f1fbf7fffab8f5f9fb">Email</a><a href="#">LinkedIn</a>
+    </div>
+    <div class="footer-copy">© 2026 · UX/UI Designer</div>
+  </div>
+</footer>
+
+<button class="to-top" type="button" aria-label="Back to top">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+</button>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../script.js"></script>
+</body>
+</html>
