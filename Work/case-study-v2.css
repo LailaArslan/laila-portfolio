@@ -338,9 +338,21 @@
   /* head-shot: remove tilt + oversized shadow near right edge */
   .head-shot{overflow:hidden;border-radius:4px}
   .head-shot .frame{transform:none;box-shadow:7px 9px 0 var(--ink)}
-  /* annotation: pull into normal flow so it can't sit at right:-6px */
-  .head-shot .anno{position:static;margin-bottom:14px;justify-content:flex-start}
-  .head-shot .anno .pen{transform:none;max-width:none;text-align:left}
+  /* annotation: show hand-written caption above the image (no arrow).
+     On 2-col desktop the SVG arrow curves toward the image — on mobile
+     the image is directly below and the arrow looks arbitrary/broken.
+     Keeping just the Caveat text gives a clean caption feel. */
+  .head-shot .anno{position:static;margin-bottom:16px;justify-content:flex-start;gap:0}
+  .head-shot .anno svg{display:none}
+  .head-shot .anno .pen{transform:none;max-width:none;text-align:left;font-size:clamp(18px,5vw,24px)}
+
+  /* ---- testing section connector: hide the rotating SVG arrow ----
+     On desktop the → arrow points from finding to response (3-col layout).
+     At 820px it's rotated 90° to point ↓, but the SVG layout box stays
+     48×20 while it renders 20×48 — causing visual misalignment.
+     Hiding the SVG and just showing the "so I" Caveat label is cleaner. */
+  .l-conn{display:flex;align-items:center;gap:8px}
+  .l-conn svg{display:none}
 
   /* ---- chapter rhythm ---- */
   .chapter{padding:52px 0}
