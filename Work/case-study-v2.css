@@ -74,11 +74,11 @@
 /* hero shot — large, tilted, breaking the frame, annotated */
 .head-shot{position:relative}
 .head-shot .frame{transform:rotate(-1.4deg);box-shadow:15px 18px 0 var(--ink)}
-.head-shot .anno{position:absolute;right:-6px;top:-46px;display:flex;align-items:flex-end;gap:8px;z-index:3}
+/* annotation sits in normal flow above the frame — keeps it from bleeding into the screenshot */
+.head-shot .anno{display:flex;align-items:flex-end;justify-content:flex-end;gap:8px;margin-bottom:14px}
 .head-shot .anno .pen{transform:rotate(-4deg);max-width:13ch;text-align:right}
 .head-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:30px}
-@media(max-width:900px){.head-grid{grid-template-columns:1fr;gap:34px}.head-shot{order:-1}
-  .head-shot .anno{top:-38px;right:0}}
+@media(max-width:900px){.head-grid{grid-template-columns:1fr;gap:34px}.head-shot{order:-1}}
 
 /* ============================================================
    01 · THE MESSY SERVICE  (research wall)
@@ -132,12 +132,12 @@
 /* editorial stat line (replaces the 3-card insight grid) */
 .statline{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;
   border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
-.stat{padding:30px 34px 30px 0;border-right:2px solid var(--line)}
+.stat{padding:38px 40px 38px 0;border-right:2px solid rgba(36,20,8,.22)}
 .stat:last-child{border-right:none;padding-right:0}
 .stat .sn{font-family:var(--font-grotesk);font-weight:900;font-size:clamp(46px,5.5vw,72px);line-height:.92;
-  letter-spacing:-.04em;color:var(--ink)}
-.stat .st{font-family:var(--font-grotesk);font-weight:800;font-size:15.5px;color:var(--ink);margin:14px 0 7px}
-.stat .sd{font-size:15px;line-height:1.58;color:var(--ink-soft)}
+  letter-spacing:-.04em;color:var(--orange-deep)}
+.stat .st{font-family:var(--font-grotesk);font-weight:800;font-size:16px;color:var(--ink);margin:16px 0 9px}
+.stat .sd{font-size:15.5px;line-height:1.6;color:var(--ink-soft)}
 @media(max-width:900px){.map-spread{grid-template-columns:1fr;gap:30px}.map-spread .frame{transform:none}
   .statline{grid-template-columns:1fr;border-bottom:none}
   .stat{padding:24px 0;border-right:none;border-bottom:2px solid var(--line)}}

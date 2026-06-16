@@ -308,14 +308,11 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--orange-deep);outlin
      positions that compete with content */
   .hero > svg.doodle{display:none}
 
-  /* hero: center photo and clip any overflow from decorative elements */
+  /* hero: center photo and clip overflow; hand-note is now at bottom:-42px
+     which is outside the overflow:hidden clip on mobile — hide explicitly */
   .hero-photo{overflow:hidden;justify-self:center;margin-bottom:24px}
-  /* arrow SVG (left:-86px, width:104) has 18px inside container bounds —
-     overflow:hidden alone leaves a partial black mark; hide it entirely */
-  .hero-photo > svg.doodle:not(.float-b),
   .hero-photo > .hand-note{display:none}
-  /* yellow star (right:-6px) was partially clipped — reposition it fully
-     inside the portrait so it reads as intentional, not a broken shard */
+  /* yellow star — repositioned fully inside portrait bounds on mobile */
   .hero-photo > svg.doodle.float-b{right:12px!important;top:12px!important}
   .hero .wrap{padding-top:44px;padding-bottom:32px}
   .hero-actions{flex-direction:column;align-items:stretch;gap:12px;margin-top:28px}
