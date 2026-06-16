@@ -290,42 +290,69 @@
 
 /* ================================================================
    MOBILE FIXES  ≤ 768px  — case study
+   ROOT CAUSES (found with DevTools scrollWidth scan at 390px):
+   1. .wall-art / .wall-notes / .ba-step / .ba-bridge lack min-width:0
+      so their parent 1fr grid tracks expand to content min-content
+      (wall → 566px, ba section → 881px instead of 354px)
+   2. .frame.scrollable img uses width:auto + height:300px + max-width:none
+      so the image takes its intrinsic width from aspect ratio, forcing
+      every ancestor wider
+   3. <figure> has browser-default margin:1em 40px that subtracts 80px
+      from usable frame width on mobile
    ================================================================ */
 @media(max-width:768px){
-  /* hard-clip any stray overflow at the canvas level */
-  .cs2,.flowdark{overflow-x:hidden}
+  /* ---- figure margin reset: reclaim the 80px browser default takes away ---- */
+  .frame{margin:0}
 
-  /* opening header: smaller title floor, less vertical padding */
+  /* ---- grid item minimum: prevent 1fr tracks from expanding to content ---- */
+  /* .wall section */
+  .wall-art,.wall-notes{min-width:0}
+  /* .ba before/after section */
+  .ba-step,.ba-bridge{min-width:0}
+
+  /* ---- scrollable artifact frames: width constrained by grid, not image ---- */
+  /* The frame is the scroll container. Width = 100% of the (now-correct) grid track.
+     Image maintains aspect-ratio height and scrolls horizontally inside the frame. */
+  .frame.scrollable{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    width:100%;
+    max-width:100%
+  }
+  .frame.scrollable img{
+    height:260px;
+    width:auto;
+    max-width:none;
+    min-width:0;
+    display:block
+  }
+
+  /* ---- ba-meta: wrap items when container is viewport-width ---- */
+  .ba-meta{flex-wrap:wrap;gap:10px 12px}
+  .ba-meta .desc{max-width:100%}
+
+  /* ---- opening header ---- */
   .cs2-head{padding:12px 0 52px}
   .cs2-title{font-size:clamp(26px,7vw,48px);letter-spacing:-.03em}
 
-  /* head-shot: remove tilt + large shadow that bleed past viewport edge */
+  /* head-shot: remove tilt + oversized shadow near right edge */
   .head-shot{overflow:hidden;border-radius:4px}
   .head-shot .frame{transform:none;box-shadow:7px 9px 0 var(--ink)}
-  /* pull annotation back into normal flow so it can't overflow absolutely */
+  /* annotation: pull into normal flow so it can't sit at right:-6px */
   .head-shot .anno{position:static;margin-bottom:14px;justify-content:flex-start}
   .head-shot .anno .pen{transform:none;max-width:none;text-align:left}
 
-  /* chapter rhythm: tighter on mobile */
+  /* ---- chapter rhythm ---- */
   .chapter{padding:52px 0}
   .chapter+.chapter{padding-top:12px}
 
-  /* 01 messy service: note cards tighter */
+  /* ---- section-specific tightening ---- */
   .note{font-size:14px;padding:10px 13px}
   .messy-quote{margin-top:40px;gap:16px}
-
-  /* 03 flowdark: tighten bridge gap */
   .ba-bridge{padding:16px 0}
-
-  /* 04 wirestrip: tighter top margin */
   .wirestrip{margin-top:48px}
 
-  /* scrollable artifact frames: image scrolls inside the frame,
-     page does not scroll horizontally */
-  .frame.scrollable{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
-  .frame.scrollable img{width:auto;height:240px;max-width:none;min-width:560px}
-
-  /* 07 close CTAs: stack and stretch to full width */
+  /* ---- close section CTAs ---- */
   .close-cta{flex-direction:column;align-items:stretch;gap:12px;margin-top:50px}
   .close-cta .btn{justify-content:center;text-align:center}
 }
@@ -334,28 +361,28 @@
    MOBILE FIXES  ≤ 480px  — tightest viewports
    ================================================================ */
 @media(max-width:480px){
-  /* font floors: go smaller to stay within viewport */
+  /* font floors: smaller so long headings don't need to wrap awkwardly */
   .cs2-title{font-size:clamp(22px,7.5vw,36px)}
   .chap-num{font-size:clamp(40px,12vw,68px)}
   .chap-title{font-size:clamp(20px,5.5vw,32px);max-width:none}
   .chap-lead{font-size:15px}
 
-  /* reduce frame shadows — large offsets bleed visually at narrow widths */
+  /* reduce frame shadows — large offsets look clipped at narrow widths */
   .frame{box-shadow:5px 6px 0 var(--ink)}
   .head-shot .frame{box-shadow:5px 6px 0 var(--ink)}
   .frame.soft{box-shadow:4px 5px 0 rgba(36,20,8,.16)}
   .frame.on-dark-shadow,.ba .frame{box-shadow:7px 9px 0 rgba(0,0,0,.4)}
 
-  /* 01: even smaller note cards */
+  /* scrollable image shorter on very small screens */
+  .frame.scrollable img{height:200px}
+
+  /* tighter note cards */
   .note{font-size:13px;padding:9px 11px}
 
-  /* 04: scrollable images shorter for small screens */
-  .frame.scrollable img{height:200px;min-width:480px}
-
-  /* 05: tighter ledger rows */
+  /* tighter ledger rows */
   .lrow{gap:14px;padding:20px 0}
 
-  /* 07: close section tighter coda */
+  /* tighter close section */
   .coda{margin-top:44px}
   .close-cta .btn{width:100%}
 }

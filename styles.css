@@ -294,8 +294,6 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--orange-deep);outlin
    MOBILE FIXES  ≤ 680px  — homepage / global
    ================================================================ */
 @media(max-width:680px){
-  html,body{overflow-x:hidden}
-
   /* layout: tighter horizontal padding at very small widths */
   .wrap{padding:0 18px}
   .section{padding:60px 0}
@@ -305,10 +303,16 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--orange-deep);outlin
   .h-hero{font-size:clamp(32px,10vw,52px);letter-spacing:-.03em}
   .h-sec{font-size:clamp(28px,9vw,46px);letter-spacing:-.03em}
 
-  /* hero: tighter vertical rhythm, actions stack */
+  /* hero: clip decorative SVG arrow + "that's me!" hand-note that sit at
+     left:-86px / left:-128px relative to the photo div — purely decorative */
+  .hero-photo{overflow:hidden}
   .hero .wrap{padding-top:48px;padding-bottom:36px}
   .hero-actions{flex-direction:column;align-items:stretch}
   .hero-actions .btn{justify-content:center}
+
+  /* about: spin-badge has inline right:-22px which pushes it 14px past the
+     viewport — override with !important to keep it inside bounds */
+  .spin-badge.spin-slow{right:8px!important;top:8px!important}
 
   /* contact: reduce oversized heading floor, stack CTA buttons */
   .contact h2{font-size:clamp(32px,9vw,56px)}
