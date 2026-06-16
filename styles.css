@@ -283,9 +283,39 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--orange-deep);outlin
 .to-top:hover{transform:translateY(-3px) rotate(-3deg);box-shadow:5px 6px 0 var(--orange)}
 .to-top:active{transform:translateY(-1px) scale(.96)}
 .to-top:focus-visible{outline:3px solid var(--orange-deep);outline-offset:4px}
-@media(max-width:680px){.to-top{right:16px;bottom:16px;width:48px;height:48px}}
+@media(max-width:680px){.to-top{right:14px;bottom:72px;width:44px;height:44px}}
 @media (prefers-reduced-motion: reduce){
   .to-top{transition:opacity .2s,visibility .2s}
   .to-top.show{transform:none}
   .to-top:hover{transform:none}
+}
+
+/* ================================================================
+   MOBILE FIXES  ≤ 680px  — homepage / global
+   ================================================================ */
+@media(max-width:680px){
+  html,body{overflow-x:hidden}
+
+  /* layout: tighter horizontal padding at very small widths */
+  .wrap{padding:0 18px}
+  .section{padding:60px 0}
+  .section-tight{padding:44px 0}
+
+  /* typography: lower the clamp floors so text never overflows */
+  .h-hero{font-size:clamp(32px,10vw,52px);letter-spacing:-.03em}
+  .h-sec{font-size:clamp(28px,9vw,46px);letter-spacing:-.03em}
+
+  /* hero: tighter vertical rhythm, actions stack */
+  .hero .wrap{padding-top:48px;padding-bottom:36px}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .hero-actions .btn{justify-content:center}
+
+  /* contact: reduce oversized heading floor, stack CTA buttons */
+  .contact h2{font-size:clamp(32px,9vw,56px)}
+  .contact-actions{flex-direction:column;align-items:stretch}
+  .contact-actions .btn{justify-content:center}
+
+  /* footer: stack items */
+  .footer-inner{flex-direction:column;align-items:flex-start;gap:16px}
+  .footer-links{flex-wrap:wrap;gap:14px}
 }

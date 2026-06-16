@@ -287,3 +287,75 @@
   .head-shot .frame,.wall-art .frame,.map-spread .frame,
   .g-item .frame,.head-shot .anno .pen,.map-aside .pen,.g-wire-inner .pen{transform:none!important}
 }
+
+/* ================================================================
+   MOBILE FIXES  ≤ 768px  — case study
+   ================================================================ */
+@media(max-width:768px){
+  /* hard-clip any stray overflow at the canvas level */
+  .cs2,.flowdark{overflow-x:hidden}
+
+  /* opening header: smaller title floor, less vertical padding */
+  .cs2-head{padding:12px 0 52px}
+  .cs2-title{font-size:clamp(26px,7vw,48px);letter-spacing:-.03em}
+
+  /* head-shot: remove tilt + large shadow that bleed past viewport edge */
+  .head-shot{overflow:hidden;border-radius:4px}
+  .head-shot .frame{transform:none;box-shadow:7px 9px 0 var(--ink)}
+  /* pull annotation back into normal flow so it can't overflow absolutely */
+  .head-shot .anno{position:static;margin-bottom:14px;justify-content:flex-start}
+  .head-shot .anno .pen{transform:none;max-width:none;text-align:left}
+
+  /* chapter rhythm: tighter on mobile */
+  .chapter{padding:52px 0}
+  .chapter+.chapter{padding-top:12px}
+
+  /* 01 messy service: note cards tighter */
+  .note{font-size:14px;padding:10px 13px}
+  .messy-quote{margin-top:40px;gap:16px}
+
+  /* 03 flowdark: tighten bridge gap */
+  .ba-bridge{padding:16px 0}
+
+  /* 04 wirestrip: tighter top margin */
+  .wirestrip{margin-top:48px}
+
+  /* scrollable artifact frames: image scrolls inside the frame,
+     page does not scroll horizontally */
+  .frame.scrollable{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
+  .frame.scrollable img{width:auto;height:240px;max-width:none;min-width:560px}
+
+  /* 07 close CTAs: stack and stretch to full width */
+  .close-cta{flex-direction:column;align-items:stretch;gap:12px;margin-top:50px}
+  .close-cta .btn{justify-content:center;text-align:center}
+}
+
+/* ================================================================
+   MOBILE FIXES  ≤ 480px  — tightest viewports
+   ================================================================ */
+@media(max-width:480px){
+  /* font floors: go smaller to stay within viewport */
+  .cs2-title{font-size:clamp(22px,7.5vw,36px)}
+  .chap-num{font-size:clamp(40px,12vw,68px)}
+  .chap-title{font-size:clamp(20px,5.5vw,32px);max-width:none}
+  .chap-lead{font-size:15px}
+
+  /* reduce frame shadows — large offsets bleed visually at narrow widths */
+  .frame{box-shadow:5px 6px 0 var(--ink)}
+  .head-shot .frame{box-shadow:5px 6px 0 var(--ink)}
+  .frame.soft{box-shadow:4px 5px 0 rgba(36,20,8,.16)}
+  .frame.on-dark-shadow,.ba .frame{box-shadow:7px 9px 0 rgba(0,0,0,.4)}
+
+  /* 01: even smaller note cards */
+  .note{font-size:13px;padding:9px 11px}
+
+  /* 04: scrollable images shorter for small screens */
+  .frame.scrollable img{height:200px;min-width:480px}
+
+  /* 05: tighter ledger rows */
+  .lrow{gap:14px;padding:20px 0}
+
+  /* 07: close section tighter coda */
+  .coda{margin-top:44px}
+  .close-cta .btn{width:100%}
+}
