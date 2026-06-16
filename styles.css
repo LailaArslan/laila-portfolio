@@ -139,12 +139,6 @@ img{display:block;max-width:100%}
 .spin-badge .sb-in{font-family:var(--font-grotesk);font-weight:800;font-size:12px;letter-spacing:.04em;text-transform:uppercase;line-height:1.25;color:var(--ink)}
 .hand-note{font-family:var(--font-hand);font-weight:700;color:var(--ink);font-size:30px;line-height:1}
 
-/* ---------- marquee ---------- */
-.marquee{overflow:hidden;background:var(--ink);color:var(--cream);white-space:nowrap;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
-.marquee-track{display:inline-flex;will-change:transform}
-@media (prefers-reduced-motion: no-preference){.marquee-track{animation:marq 28s linear infinite}}
-@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.marquee-item{font-family:var(--font-grotesk);font-weight:800;font-size:15px;letter-spacing:.13em;text-transform:uppercase;padding:14px 0;display:inline-flex;align-items:center;gap:26px;padding-right:26px}
 
 /* ---------- wave divider ---------- */
 .wave-top{position:absolute;left:0;top:-1px;width:100%;height:70px;transform:translateY(-99%);display:block;pointer-events:none}
@@ -270,8 +264,6 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--orange-deep);outlin
 .chip:active{transform:scale(.96)}
 .proj:active{transform:translateY(-3px) rotate(-.4deg)}
 
-/* ---------- marquee pause on hover ---------- */
-.marquee:hover .marquee-track{animation-play-state:paused}
 
 /* ---------- back-to-top ---------- */
 .to-top{position:fixed;right:24px;bottom:24px;z-index:70;width:52px;height:52px;border-radius:999px;
