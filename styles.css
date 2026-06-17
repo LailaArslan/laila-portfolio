@@ -126,6 +126,7 @@ img{display:block;max-width:100%}
 .badge{display:inline-flex;align-items:center;gap:9px;background:var(--yellow);border:2.5px solid var(--ink);
   border-radius:999px;padding:10px 20px;font-family:var(--font-grotesk);font-weight:800;font-size:13px;
   letter-spacing:.05em;text-transform:uppercase;color:var(--ink)}
+.badge-short{display:none}
 .chip{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-grotesk);font-weight:700;font-size:14px;
   padding:8px 16px;border:2px solid var(--ink);border-radius:999px;background:var(--cream);color:var(--ink);white-space:nowrap;
   transition:transform .15s,background .15s}
@@ -299,6 +300,11 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--orange-deep);outlin
      the 2-column desktop layout; in 1-column they float at arbitrary-looking
      positions that compete with content */
   .hero > svg.doodle{display:none}
+
+  /* hero badge: compact label on mobile — swap to shorter text, tighter sizing */
+  .badge-full{display:none}
+  .badge-short{display:inline}
+  .hero .badge{font-size:11px;padding:7px 14px;gap:7px;letter-spacing:.04em}
 
   /* hero: center photo and clip overflow; hand-note is now at bottom:-42px
      which is outside the overflow:hidden clip on mobile — hide explicitly */
