@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Simplifying Member Access Across Education Platforms — Case Study · Laila Arslan</title>
+<meta name="description" content="UX/UI case study: designing a shared login and account creation experience across Keystone's domestic education platforms — studentum.se, gymnasium.se, and utbildning.se — one verified flow across every entry point and market."/>
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23241408'/%3E%3Ctext x='32' y='43' font-family='Archivo,Arial,sans-serif' font-size='27' font-weight='800' fill='%23F7F1E1' text-anchor='middle'%3ELA%3C/text%3E%3C/svg%3E"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Archivo:wght@400;600;700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../styles.css"/>
+<link rel="stylesheet" href="case-study-v2.css"/>
+<link rel="stylesheet" href="member-access-login.css"/>
+</head>
+<body class="cs2 cs2-ma">
+
+<!-- ============================ NAV ============================ -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="logo" href="../index.html#top">
+      <span class="logo-mark">LA</span>
+      <span>Laila Arslan</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#process">Process</a>
+      <a href="../index.html#contact" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- ============================================================ -->
+<!-- 00 · OPENING / HOOK                                          -->
+<!-- ============================================================ -->
+<header class="cs2-head" data-screen-label="Opening">
+  <div class="wrap">
+    <a class="cs2-back" href="../index.html#work">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      Back to work
+    </a>
+
+    <span class="head-eyebrow"><span class="dot"></span> Case Study · Interaction &amp; Product Design · Multi-platform</span>
+
+    <p class="head-project">Keystone · Domestic Platforms</p>
+
+    <h1 class="cs2-title">One access model, <span class="mark mark-mint"><span>every platform</span></span>.</h1>
+
+    <div class="head-grid">
+      <div class="head-col reveal">
+        <p>Keystone's domestic education websites had multiple places where users could hit a login wall — saving favourites, writing reviews, requesting information, running education tests, or booking programmes. The challenge was not just redesigning a login screen, but creating a consistent access pattern that could work across different sites, markets, devices, and user intentions.</p>
+
+        <div class="byline">
+          <div class="by"><span class="byk">My role</span><span class="byv">UX/UI Designer — Domestic platforms<br/>Flow mapping, interaction design, modal states, mobile navigation, edge cases, and cross-site login patterns.</span></div>
+          <div class="by"><span class="byk">Platforms</span><span class="byv">Keystone — studentum.se, gymnasium.se, utbildning.se</span></div>
+          <div class="by"><span class="byk">Team</span><span class="byv">PMs, developers, and product stakeholders</span></div>
+          <div class="by"><span class="byk">Tools</span><span class="byv">Figma · FigJam · Miro</span></div>
+        </div>
+
+        <div class="head-tags">
+          <span class="chip">Interaction Design</span>
+          <span class="chip">User Flows</span>
+          <span class="chip">UX Research</span>
+          <span class="chip">UI Design</span>
+          <span class="chip">Mobile Design</span>
+          <span class="chip">Edge Cases</span>
+          <span class="chip">Cross-platform</span>
+        </div>
+      </div>
+
+      <div class="head-shot reveal reveal-d1">
+        <div class="anno">
+          <span class="pen">one shared pattern — shown via studentum.se</span>
+        </div>
+        <figure class="frame">
+          <img src="../images/ma-hero-modal.png" alt="Studentum.se homepage with the login modal open — 'Welcome to studentum!' with email field and Login button" style="width:100%;display:block"/>
+        </figure>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================ -->
+<!-- 01 · THE INTERRUPTION PROBLEM                                 -->
+<!-- ============================================================ -->
+<section class="chapter" id="interruption" data-screen-label="01 · The interruption problem">
+  <div class="wrap">
+    <div class="chap">
+      <div class="chap-head">
+        <span class="chap-num">01</span>
+        <span class="chap-kicker"><span class="eyebrow-line"></span> The interruption problem</span>
+      </div>
+      <h2 class="chap-title">Login wasn't a single page. It was a repeated <span class="mark mark-mint"><span>interruption</span></span> — across every platform.</h2>
+      <p class="chap-lead">Across Keystone's domestic education platforms, users saving a favourite school, writing a review, or requesting information would hit a login wall mid-task. Each site handled it differently. None of them felt like the same product, and none gave users a consistent way forward.</p>
+    </div>
+
+    <div class="statline reveal">
+      <div class="stat">
+        <div class="sn">7+</div>
+        <div class="st">Entry points mapped</div>
+        <div class="sd">Direct login, save favourite, review, education test, quote request, information request, and booking — each could trigger a login wall, on any of the platforms.</div>
+      </div>
+      <div class="stat">
+        <div class="sn">2</div>
+        <div class="st">User types to handle</div>
+        <div class="sd">First-time visitors and returning members — the same flow needed to work clearly for both, without asking which they were.</div>
+      </div>
+      <div class="stat">
+        <div class="sn">1</div>
+        <div class="st">Verified flow</div>
+        <div class="sd">Email plus a six-digit code — no password to forget, consistent across every entry point, device, and platform.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 02 · MAPPING EVERY ENTRY POINT                                -->
+<!-- ============================================================ -->
+<section class="chapter" id="entrypoints" data-screen-label="02 · Mapping every entry point">
+  <div class="wrap">
+    <div class="chap">
+      <div class="chap-head">
+        <span class="chap-num">02</span>
+        <span class="chap-kicker"><span class="eyebrow-line"></span> Mapping every entry point</span>
+      </div>
+      <h2 class="chap-title">Before designing a modal, I mapped every <span class="mark"><span>interruption</span></span>.</h2>
+      <p class="chap-lead">The indirect entry points were the real design challenge — and they were shared across platforms. Each triggered login at a different moment, some mid-task, some at the end of a form. Mapping them made the scope visible, the solution clear, and the pattern reusable. Visuals show studentum.se as the primary design context.</p>
+    </div>
+
+    <div class="ep-spread reveal">
+      <div class="ep-art">
+        <div class="wide-image-scroll">
+          <img src="../images/ma-asis-direct.png" alt="Direct login as-is flow — existing login page with account creation and password paths"/>
+        </div>
+        <div class="ep-label">
+          <span class="tag-pill ghost">As-is</span>
+          <span class="pen">direct login — the starting point</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ep-companion reveal">
+      <div class="ep-aside">
+        <span class="pen">when a feature required login...</span>
+        <p>...the user needed a clear resolution path: log in, create an account, or go back. Designing this consistently across all seven contexts — and redirecting the user to what they were doing — was the core challenge.</p>
+      </div>
+      <div class="wide-image-scroll">
+        <img src="../images/ma-entry-points-feature.png" alt="Need to login to use feature — entry point flow showing login wall for feature-gated actions"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 03 · ONE ACCESS MODEL  (dark interruption)                    -->
+<!-- ============================================================ -->
+<section class="chapter flowdark" id="flow" data-screen-label="03 · One access model">
+  <div class="wrap">
+    <div class="chap on-dark">
+      <div class="chap-head">
+        <span class="chap-num">03</span>
+        <span class="chap-kicker"><span class="eyebrow-line"></span> One access model</span>
+      </div>
+      <h2 class="chap-title">A fragmented experience, resolved into one <span class="mark mark-mint"><span>verified flow</span></span>.</h2>
+      <p class="chap-lead">The new model uses email plus a six-digit code — no password to forget, no app required. The same mechanism handles first-time visitors and returning members, across every entry point and every platform.</p>
+    </div>
+
+    <div class="ba reveal">
+      <div class="ba-step before">
+        <div class="ba-meta">
+          <span class="lbl">Before</span>
+          <span class="desc">The <strong>as-is flows</strong> — direct login (left) and indirect entry points (right), mapped before redesign to surface inconsistencies and missing recovery paths.</span>
+          <span class="tag-pill ghost">As-is</span>
+        </div>
+        <div class="asis-pair">
+          <div class="wide-image-scroll">
+            <img src="../images/ma-asis-direct.png" alt="Direct login as-is flow — login page with account creation and password paths"/>
+          </div>
+          <div class="wide-image-scroll">
+            <img src="../images/ma-asis-indirect.png" alt="Indirect login as-is flows — newsletter signup, Utbildningstest, Quote Request, Booking request"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="ba-bridge" aria-hidden="true">
+        <span class="pen">resolved into</span>
+        <svg width="46" height="74" viewBox="0 0 48 80" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6v58"/><path d="M9 50l15 16 15-16"/></svg>
+      </div>
+
+      <div class="ba-step after">
+        <div class="ba-meta">
+          <span class="lbl">After</span>
+          <span class="desc">The <strong>redesigned entry point flows</strong> — newsletter, booking, and send lead, each resolved with the unified email + 6-digit code pattern.</span>
+          <span class="tag-pill mint">Improved flows</span>
+        </div>
+        <div class="after-flow-grid">
+          <div class="wide-image-scroll">
+            <img src="../images/ma-ep-newsletter.png" alt="Newsletter signup — redesigned with unified login pattern"/>
+          </div>
+          <div class="wide-image-scroll">
+            <img src="../images/ma-ep-booking.png" alt="Booking request — redesigned with unified login pattern"/>
+          </div>
+          <div class="wide-image-scroll">
+            <img src="../images/ma-ep-sendlead.png" alt="Send Lead — redesigned with unified login pattern"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="edge-note reveal">
+      <span class="en-label">Edge cases covered</span>
+      <div class="en-list">
+        <span class="en-pill">Resend code</span>
+        <span class="en-pill">Wrong email / change email</span>
+        <span class="en-pill">Returning user recognised</span>
+        <span class="en-pill">Redirect after login</span>
+        <span class="en-pill">First-time vs returning</span>
+        <span class="en-pill">Mobile bottom sheet</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 04 · STATES AND EDGE CASES   (UI gallery)                     -->
+<!-- ============================================================ -->
+<section class="chapter" id="states" data-screen-label="04 · States and edge cases">
+  <div class="wrap">
+    <div class="chap">
+      <div class="chap-head">
+        <span class="chap-num">04</span>
+        <span class="chap-kicker"><span class="eyebrow-line"></span> States and edge cases</span>
+      </div>
+      <h2 class="chap-title">Every state, <span class="mark"><span>designed</span></span>.</h2>
+      <p class="chap-lead">From the first login prompt to the welcome confirmation — each modal covers both first-time and returning users, with clear recovery paths for every edge case.</p>
+    </div>
+
+    <!-- Modal gallery 2×2 -->
+    <div class="ma-modal-grid reveal">
+      <div class="ma-modal-item">
+        <figure class="frame">
+          <img src="../images/ma-modal-login.png" alt="Desktop login modal — email field and Login CTA" style="width:100%;height:auto;display:block;object-fit:contain"/>
+        </figure>
+        <div class="g-cap">
+          <span class="gt"><span class="gd"></span> Login</span>
+          <span class="gs">Entry point for returning members — email field, clear CTA, and a path to create an account for new users.</span>
+        </div>
+      </div>
+      <div class="ma-modal-item">
+        <figure class="frame">
+          <img src="../images/ma-modal-create.png" alt="Create account modal — name and email fields for new users" style="width:100%;height:auto;display:block;object-fit:contain"/>
+        </figure>
+        <div class="g-cap">
+          <span class="gt"><span class="gd"></span> Create account</span>
+          <span class="gs">First-time visitors branch here seamlessly — same modal pattern, minimal friction.</span>
+        </div>
+      </div>
+      <div class="ma-modal-item">
+        <figure class="frame">
+          <img src="../images/ma-modal-inbox.png" alt="Check your inbox modal — six-digit code entry with resend and change-email options" style="width:100%;height:auto;display:block;object-fit:contain"/>
+        </figure>
+        <div class="g-cap">
+          <span class="gt"><span class="gd"></span> Check your inbox</span>
+          <span class="gs">Six-digit code entry — with resend and change-email recovery options clearly visible.</span>
+        </div>
+      </div>
+      <div class="ma-modal-item">
+        <figure class="frame">
+          <img src="../images/ma-modal-success.png" alt="Welcome success modal — confirmation after login or account creation" style="width:100%;height:auto;display:block;object-fit:contain"/>
+        </figure>
+        <div class="g-cap">
+          <span class="gt"><span class="gd"></span> Welcome</span>
+          <span class="gs">Success confirmation — redirects to the action that triggered login so users never lose their place.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile states -->
+    <div class="ma-mobile-section reveal">
+      <div class="ma-section-label">
+        <div class="section-eyebrow"><span class="eyebrow-line"></span> Mobile</div>
+        <p>On mobile, login uses a bottom sheet — familiar, thumb-friendly, and easy to dismiss. The navigation adapts to reflect logged-in state without a page reload.</p>
+      </div>
+      <div class="ma-mobile-grid">
+        <div class="ma-mobile-item">
+          <figure class="frame">
+            <img src="../images/ma-mobile-sheet.png" alt="Mobile login bottom sheet — email field with Login CTA" style="width:100%;height:auto;display:block;object-fit:contain"/>
+          </figure>
+          <div class="g-cap" style="margin-top:12px">
+            <span class="gt"><span class="gd"></span> Bottom sheet</span>
+          </div>
+        </div>
+        <div class="ma-mobile-item">
+          <figure class="frame">
+            <img src="../images/ma-mobile-nav-out.png" alt="Mobile navigation — not logged in state" style="width:100%;height:auto;display:block;object-fit:contain"/>
+          </figure>
+          <div class="g-cap" style="margin-top:12px">
+            <span class="gt"><span class="gd"></span> Nav: not logged in</span>
+          </div>
+        </div>
+        <div class="ma-mobile-item">
+          <figure class="frame">
+            <img src="../images/ma-mobile-nav-in.png" alt="Mobile navigation — logged in state" style="width:100%;height:auto;display:block;object-fit:contain"/>
+          </figure>
+          <div class="g-cap" style="margin-top:12px">
+            <span class="gt"><span class="gd"></span> Nav: logged in</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desktop nav states: logged out → logged in -->
+    <div class="wirestrip reveal">
+      <div>
+        <div class="wlabel"><span class="wd"></span> Not logged in</div>
+        <figure class="frame soft">
+          <img src="../images/ma-nav-loggedout.png" alt="Studentum.se — logged out state" style="width:100%;height:auto;display:block;object-fit:contain"/>
+        </figure>
+      </div>
+      <div class="w-arrow" aria-hidden="true">
+        <span class="pen">after login</span>
+        <svg width="58" height="34" viewBox="0 0 90 40" fill="none" stroke="var(--ink)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 20h70"/><path d="M62 8l16 12-16 12"/></svg>
+      </div>
+      <div>
+        <div class="wlabel"><span class="wd"></span> Logged in</div>
+        <figure class="frame soft">
+          <img src="../images/ma-nav-loggedin.png" alt="Studentum.se — logged in state" style="width:100%;height:auto;display:block;object-fit:contain"/>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 05 · OUTCOME & LEARNINGS   (orange payoff)                    -->
+<!-- ============================================================ -->
+<section class="chapter close" id="outcome" data-screen-label="05 · Outcome &amp; learnings">
+  <div class="wrap">
+    <div class="chap">
+      <div class="chap-head">
+        <span class="chap-kicker"><span class="eyebrow-line"></span> Outcome &amp; learnings</span>
+      </div>
+    </div>
+    <p class="close-statement">This project was about designing for <span class="mark"><span>interruption at scale</span></span> — one access pattern that could work across platforms, devices, and user intentions.</p>
+    <p class="close-sub">The most valuable work happened before the modals: mapping every place a user could hit a login wall — across Studentum, Gymnasium, and Utbildning — and building one pattern that resolved all of them.</p>
+
+    <div class="coda">
+      <div class="coda-item">
+        <div class="cn">01</div>
+        <h4>Map the entry points first</h4>
+        <p>The modal is the last thing to design, not the first. Entry point mapping defines the constraints and reveals the real scope.</p>
+      </div>
+      <div class="coda-item">
+        <div class="cn">02</div>
+        <h4>One mechanism reduces cognitive load</h4>
+        <p>Users don't need different login behaviours depending on where they are. Consistency builds trust across the whole product.</p>
+      </div>
+      <div class="coda-item">
+        <div class="cn">03</div>
+        <h4>Edge cases are the UX</h4>
+        <p>Resend, wrong email, returning-user recognition, and redirect logic — these are where the real design work lives.</p>
+      </div>
+    </div>
+
+    <div class="close-cta">
+      <a class="btn btn-light" href="../index.html#work">← Back to all work</a>
+      <a class="btn btn-ghost-light" href="../index.html#contact">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <a class="logo" href="../index.html#top"><span class="logo-mark">LA</span><span>Laila Arslan</span></a>
+    <div class="footer-links">
+      <a href="../index.html#work">Work</a><a href="../index.html#about">About</a><a href="../index.html#process">Process</a>
+      <a href="mailto:laila.arslan1@gmail.com">Email</a><a href="#">LinkedIn</a>
+    </div>
+    <div class="footer-copy">© 2026 · UX/UI Designer</div>
+  </div>
+</footer>
+
+<button class="to-top" type="button" aria-label="Back to top">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="../script.js"></script>
+</body>
+</html>

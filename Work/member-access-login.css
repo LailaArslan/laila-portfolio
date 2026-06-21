@@ -1,0 +1,104 @@
+/* ============================================================
+   Studentum Member Access — Case Study
+   member-access-login.css  (extends case-study-v2.css)
+   Accent: mint  ·  Secondary: yellow highlights
+   ============================================================ */
+
+/* ----- mint accent overrides ----- */
+.cs2-ma .head-eyebrow .dot{background:var(--mint-deep)}
+.cs2-ma .head-project{color:var(--mint-deep)}
+.cs2-ma .head-project::before{background:var(--mint-deep)}
+.cs2-ma .stat .sn{color:var(--mint-deep)}
+.cs2-ma .gd{background:var(--mint-deep)}
+.cs2-ma .wirestrip .w-arrow .pen{color:var(--mint-deep)}
+
+/* ----- wide flow diagram scroll wrapper ----- */
+.wide-image-scroll{
+  overflow-x:auto;max-width:100%;
+  border-radius:14px;background:var(--cream-2);
+}
+.wide-image-scroll img{
+  min-width:900px;width:100%;height:auto;
+  display:block;object-fit:contain;
+}
+
+/* ----- §02 · entry points spread ----- */
+.ep-spread{margin-top:12px}
+.ep-two-stack{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.ep-label{margin-top:22px;display:flex;align-items:center;gap:10px}
+.ep-label .pen{font-size:clamp(18px,1.6vw,24px)}
+
+.ep-companion{
+  margin-top:68px;
+  display:grid;grid-template-columns:1fr 1.55fr;gap:48px;align-items:start;
+}
+.ep-aside{display:flex;flex-direction:column;gap:20px;padding-top:6px}
+.ep-aside .pen{color:var(--mint-deep);font-size:clamp(20px,1.8vw,26px)}
+.ep-aside p{font-size:clamp(16px,1.3vw,19px);line-height:1.7;color:var(--ink-soft);margin:0}
+
+@media(max-width:900px){
+  .ep-art .frame{transform:none}
+  .ep-companion{grid-template-columns:1fr;gap:28px}
+  .ep-aside{padding-top:0}
+}
+
+/* ----- §03 · edge cases note (inside dark section) ----- */
+.edge-note{
+  margin-top:46px;padding:22px 26px;
+  border:1.5px solid rgba(247,241,225,.18);border-radius:16px;
+  display:grid;grid-template-columns:auto 1fr;gap:20px 26px;align-items:start;
+}
+.en-label{
+  font-family:var(--font-grotesk);font-weight:800;font-size:11.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--mint);white-space:nowrap;padding-top:6px;
+}
+.en-list{display:flex;flex-wrap:wrap;gap:10px}
+.en-pill{
+  font-family:var(--font-grotesk);font-weight:700;font-size:13.5px;
+  color:rgba(247,241,225,.82);background:rgba(247,241,225,.07);
+  border:1.5px solid rgba(247,241,225,.18);border-radius:999px;padding:5px 13px;
+}
+@media(max-width:680px){
+  .edge-note{grid-template-columns:1fr;gap:14px}
+  .en-label{padding-top:0}
+}
+
+/* ----- §03 · as-is pair + after grid ----- */
+.asis-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.after-flow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+
+/* ----- §04 · modal gallery 2×2 ----- */
+.ma-modal-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:32px 26px;margin-top:14px;
+}
+.ma-modal-item{display:flex;flex-direction:column;gap:14px}
+
+/* ----- §04 · mobile section ----- */
+.ma-mobile-section{
+  margin-top:74px;padding-top:42px;
+  border-top:2px dashed rgba(36,20,8,.24);
+  display:grid;grid-template-columns:.85fr 2fr;gap:52px;align-items:start;
+}
+.section-eyebrow{
+  display:inline-flex;align-items:center;gap:9px;margin-bottom:16px;
+  font-family:var(--font-grotesk);font-weight:800;font-size:11.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ink-soft);
+}
+.ma-section-label p{
+  font-size:clamp(15px,1.2vw,17.5px);line-height:1.72;color:var(--ink-soft);margin:0;
+}
+.ma-mobile-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start;
+}
+.ma-mobile-item{display:flex;flex-direction:column}
+
+/* ----- responsive ----- */
+@media(max-width:820px){
+  .ma-modal-grid{grid-template-columns:1fr;gap:24px}
+  .ma-mobile-section{grid-template-columns:1fr;gap:28px}
+  .asis-pair{grid-template-columns:1fr;gap:16px}
+  .after-flow-grid{grid-template-columns:1fr;gap:16px}
+}
+@media(max-width:480px){
+  .ma-mobile-grid{grid-template-columns:repeat(2,1fr)}
+}
