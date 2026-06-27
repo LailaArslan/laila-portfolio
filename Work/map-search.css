@@ -103,7 +103,7 @@
 @media(max-width:900px){
   /* mockup below intro text on mobile — overrides case-study-v2.css order:-1 */
   .cs2-ms .head-shot{order:1}
-  .ms-hero-wrap{width:100%;max-width:300px}
+  .ms-hero-wrap{width:100%;max-width:360px;overflow:hidden}
 }
 @media(max-width:820px){
   .ms-insight-grid{grid-template-columns:1fr}
